@@ -6,7 +6,7 @@
     --background: #f3f2f0;
     
     --primary: #76a277;
-    --secondary: #716f18;
+    --secondary: var(--primary);
     --accent: #e27253;
 }
 :root[data-theme="dark"] {
@@ -14,7 +14,7 @@
     --background: #21201d;
     
     --primary: #76a277;
-    --secondary: #716f18;
+    --secondary: var(--primary);
     --accent: #e27253;
 }
 
@@ -116,21 +116,6 @@ footer {
 .social-icons a:hover {
     color: var(--accent);
 }
-.btn{
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    color: var(--text);
-    border: 2px solid var(--primary);
-    border-radius: 5px;
-    text-decoration: none;
-    text-align: center;
-}
-.btn:hover{
-    transform: translate(0, -3px);
-    transition: transform ease 0.2s;
-}
-
 .publication {
     display: flex;
     align-items: center;
