@@ -159,7 +159,8 @@ footer {
     margin-bottom: 8px;
 }
 .publication-authors-me {
-    color: var(--secondary);
+    color: var(--accent);
+    opacity: 0.6;
     display: inline;
 }
 .publication-venue {
