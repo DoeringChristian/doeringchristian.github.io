@@ -2,13 +2,11 @@
  * https://www.realtimecolors.com/?colors=080c08-f3f7f3-76a277-a9c6be-8eb4ae&fonts=Inter-Inter
  */
 :root {
-    --text: #080c08;
-    --background: #f3f7f3;
+    --text: #080808;
+    --background: #f3f3f3;
     --primary: #76a277;
     --secondary: #a9c6be;
     --accent: #8eb4ae;
-    
-    /* --background-secondary: #e0ebe0; */
 }
 :root[data-theme="dark"] {
     --text: #f3f7f3;
@@ -16,32 +14,38 @@
     --primary: #5d895e;
     --secondary: #39564e;
     --accent: #4b716c;
-    
-    /* --background-secondary: #000000; */
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    /* background-color: var(--background); */
     background-color: var(--background);
     color: var(--text);
-    display: flex;
-    flex-direction: column;
     min-height: 100vh;
 }
 a {
     color: var(--primary);
     text-decoration: none;
 }
+.centered-row {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
 .container {
+    display: flex;
+    flex-direction: column;
     width: 90%;
     max-width: 800px;
-    margin: auto;
     overflow: hidden;
+    justify-content: center;
 }
 header {
-    /* background: var(--background); */
     color: var(--text);
     padding: 1rem 0;
     text-align: center;
@@ -49,6 +53,7 @@ header {
 header h1 {
     margin: 0;
     margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 .toggle-btn {
     position: absolute;
@@ -77,14 +82,14 @@ nav a:hover {
     color: var(--accent);
 }
 .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background: var(--background);
     padding: 2rem;
     margin: 2rem 0;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 .btn {
     display: inline-block;

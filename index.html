@@ -18,58 +18,60 @@
             <i class="fas fa-moon"></i>
         </button>
     </header>
-    <div class="container">
-        <div class="content" id="about">
-            <h2>About Me</h2>
-            <p>Hi, I'm Christian!</p>
-            <p>
-            I'm a graduate student at the Technical University of Munich in
-            Electrical and Computer Engineering.
-            On the side I'm working as a Research Engineer at Huawei's Munich
-            Research Center, where I'm researching neural rendering methods.
-            </p>
-            <p>
-            </p>
-        </div>
-        <div class="content">
-            <h2>Publications</h2>
-            <div class="publication">
-                <img src="assets/dynamic.png" alt="Paper Image">
-                <div>
-                    <h3>Real-time Neural Rendering of Dynamic Light Fields</h3>
-                    <p>Arno Coomans, Edoardo A. Dominici, Christian Döring, Joerg H. Mueller, Jozef Hladky, Markus Steinberger<p>
-                    <div class="publication-links">
-                        <a href="https://doi.org/10.1111/cgf.15014" target="_blank">Paper</a>
-                        <a href="https://arnocoomans.be/eg2024" target="_blank">Project</a>
+    <div class = "centered-row">
+        <div class="container">
+            <div class="content">
+                <h2>About Me</h2>
+                <p>Hi, I'm Christian!</p>
+                <p>
+                I'm a graduate student at the Technical University of Munich in
+                Electrical and Computer Engineering.
+                On the side I'm working as a Research Engineer at Huawei's Munich
+                Research Center, where I'm researching neural rendering methods.
+                </p>
+                <p>
+                </p>
+            </div>
+            <div class="content">
+                <h2>Publications</h2>
+                <div class="publication">
+                    <img src="assets/dynamic.png" alt="Paper Image">
+                    <div>
+                        <h3>Real-time Neural Rendering of Dynamic Light Fields</h3>
+                        <p>Arno Coomans, Edoardo A. Dominici, Christian Döring, Joerg H. Mueller, Jozef Hladky, Markus Steinberger<p>
+                        <div class="publication-links">
+                            <a href="https://doi.org/10.1111/cgf.15014" target="_blank">Paper</a>
+                            <a href="https://arnocoomans.be/eg2024" target="_blank">Project</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="content">
-            <h2>Projects</h2>
-            <div class="publication">
-                <img src = "assets/vulkan-rt.png" alt="Image">
-                <div>
-                    <h3>Vulkan Path-tracer</h3>
-                    <p>
-                    A vulkan path-tracer, written in Rust.
-                    It implements the Disney BSDF and Next Event Estimation.
-                    </p>
-                    <div class = "publication-links">
-                        <a href="https://github.com/DoeringChristian/vulkan-rt/">Source</a>
+            <div class="content">
+                <h2>Projects</h2>
+                <div class="publication">
+                    <img src = "assets/vulkan-rt.png" alt="Image">
+                    <div>
+                        <h3>Vulkan Path-tracer</h3>
+                        <p>
+                        A vulkan path-tracer, written in Rust.
+                        It implements the Disney BSDF and Next Event Estimation.
+                        </p>
+                        <div class = "publication-links">
+                            <a href="https://github.com/DoeringChristian/vulkan-rt/">Source</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class = "publication">
-                <img src="assets/restirgi.jpg" alt="">
-                <div>
-                    <h3>Mitsuba3 Implementation of ReSTIR GI</h3>
-                    <p>
-                    Implementation of the <a href="https://research.nvidia.com/publication/2021-06_restir-gi-path-resampling-real-time-path-tracing">ReSTIR GI</a> algorithm in
-                    the <a href="https://www.mitsuba-renderer.org/">Mitsuba3</a> rendering framework.
-                    </p>
-                    <div class = "publication-links">
-                        <a href="https://github.com/DoeringChristian/restirgi/">Source</a>
+                <div class = "publication">
+                    <img src="assets/restirgi.jpg" alt="">
+                    <div>
+                        <h3>Mitsuba3 Implementation of ReSTIR GI</h3>
+                        <p>
+                        Implementation of the <a href="https://research.nvidia.com/publication/2021-06_restir-gi-path-resampling-real-time-path-tracing">ReSTIR GI</a> algorithm in
+                        the <a href="https://www.mitsuba-renderer.org/">Mitsuba3</a> rendering framework.
+                        </p>
+                        <div class = "publication-links">
+                            <a href="https://github.com/DoeringChristian/restirgi/">Source</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -83,7 +85,7 @@
             const body = document.body;
             const icon = document.querySelector('.toggle-btn i');
             const root = document.documentElement;
-            
+
             const currentTheme = root.getAttribute('data-theme');
 
             if (currentTheme === 'dark') {
