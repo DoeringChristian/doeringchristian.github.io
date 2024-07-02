@@ -12,6 +12,9 @@
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         .container {
             width: 90%;
@@ -81,6 +84,8 @@
             padding: 1rem 0;
             background: #333;
             color: #fff;
+            flex-shrink: 0;
+            width: 100%;
         }
         .social-icons {
             display: flex;
@@ -89,7 +94,7 @@
             margin: 1rem 0;
         }
         .social-icons a {
-            color: #333;
+            color: #f4f4f4;
             text-decoration: none;
             margin: 0 0.5rem;
         }
@@ -126,12 +131,6 @@
             background-color: #222;
             color: #f4f4f4;
         }
-        .dark-mode .social-icons a {
-            color: #f4f4f4;
-        }
-        .dark-mode .social-icons a:hover {
-            color: #007BFF;
-        }
         .paper {
             display: flex;
             align-items: center;
@@ -147,7 +146,10 @@
 <body>
     <header>
         <h1>Christian Döring</h1>
-        <p>Welcome to my personal webpage</p>
+        <div class="social-icons">
+            <a href="https://github.com/doeringchristian" target="_blank"><i class="fab fa-github fa-lg"></i></a>
+            <a href="mailto:doering.christian.2001@gmx.de" target="_blank"><i class="fa fa-envelope fa-lg"></i></a>
+        </div>
         <button class="toggle-btn" onclick="toggleDarkMode()">
             <i class="fas fa-moon"></i>
         </button>
@@ -156,7 +158,6 @@
         <nav>
             <a href="#about">About</a>
             <a href="#publications">Publications</a>
-            <a href="#contact">Contact</a>
         </nav>
         <div class="content" id="about">
             <h2>About Me</h2>
@@ -165,9 +166,9 @@
             I'm a graduate student at the Technical University of Munich in
             Electrical and Computer Engineering.
             On the side I'm working as a Research Engineer at Huawei's Munich
-            Research Center.
-            My focus lies on Rendering Research, combinding neural methods with
-            traditional rendering approaches.
+            Research Center, where I'm researching neural rendering methods.
+            </p>
+            <p>
             </p>
         </div>
         <div class="content" id="publications">
@@ -184,16 +185,9 @@
                 </div>
             </div>
         </div>
-        <div class="content" id="contact">
-            <h2>Contact</h2>
-            <div class="social-icons">
-                <a href="https://github.com/doeringchristian" target="_blank"><i class="fab fa-github fa-2x"></i></a>
-                <a href="mailto:doering.christian.2001@gmx.de" target="_blank"><i class="fa fa-envelope fa-2x"></i></a>
-            </div>
-        </div>
     </div>
     <footer>
-        <p>&copy; 2024 John Doe. All rights reserved.</p>
+        <p>&copy; 2024 Christian Döring. All rights reserved.</p>
     </footer>
     <script>
         function toggleDarkMode() {
