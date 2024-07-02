@@ -30,6 +30,9 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
+a {
+    color: var(--primary);
+}
 .container {
     width: 90%;
     max-width: 800px;
@@ -125,6 +128,7 @@ footer {
     align-items: center;
     flex-direction: row;
     justify-content: left;
+    margin-bottom: 32px;
 }
 .publication img {
     margin-right: 1rem;
@@ -132,7 +136,7 @@ footer {
     width: 150px;
     height: auto;
 }
-.publication a {
+.publication-links a {
     display: inline-block;
     padding: 0.5rem 1rem;
     margin-top: 0.5rem;
@@ -146,7 +150,7 @@ footer {
     text-decoration: none;
     text-align: center;
 }
-.publication a:hover{
+.publication-links a:hover{
     background-color: var(--background);
     border-color: var(--accent);
 }
