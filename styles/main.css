@@ -32,6 +32,7 @@ body {
 }
 a {
     color: var(--primary);
+    text-decoration: none;
 }
 .container {
     width: 90%;
