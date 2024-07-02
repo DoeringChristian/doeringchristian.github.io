@@ -63,14 +63,14 @@
         }
         .btn {
            display: inline-block;
-            padding: 0.5rem 1rem;
-            margin: 0.5rem 0;
-            font-size: 1rem;
-            color: #333;
-            border: 2px solid #ccc;
-            border-radius: 5px;
-            text-decoration: none;
-            text-align: center;
+           padding: 0.5rem 1rem;
+           margin: 0.5rem 0;
+           font-size: 1rem;
+           color: #333;
+           border: 2px solid #ccc;
+           border-radius: 5px;
+           text-decoration: none;
+           text-align: center;
         }
         .btn:hover {
             background-color: #f4f4f4;
@@ -81,6 +81,12 @@
             padding: 1rem 0;
             background: #333;
             color: #fff;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
         }
         .social-icons a {
             color: #333;
@@ -126,6 +132,16 @@
         .dark-mode .social-icons a:hover {
             color: #007BFF;
         }
+        .paper {
+            display: flex;
+            align-items: center;
+        }
+        .paper img {
+            margin-right: 1rem;
+            border-radius: 5px;
+            width: 150px;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -139,27 +155,40 @@
     <div class="container">
         <nav>
             <a href="#about">About</a>
-            <a href="#research">Research</a>
+            <a href="#publications">Publications</a>
             <a href="#contact">Contact</a>
         </nav>
         <div class="content" id="about">
             <h2>About Me</h2>
-            <p>Hello! I am John Doe, a researcher in computer science with a passion for artificial intelligence and machine learning. I am currently working as a senior researcher at Tech University.</p>
+            <p>Hi, I'm Christian!</p>
+            <p>
+            I'm a graduate student at the Technical University of Munich in
+            Electrical and Computer Engineering.
+            On the side I'm working as a Research Engineer at Huawei's Munich
+            Research Center.
+            My focus lies on Rendering Research, combinding neural methods with
+            traditional rendering approaches.
+            </p>
         </div>
-        <div class="content" id="research">
-            <h2>Research</h2>
-            <p>My research focuses on deep learning and its applications in natural language processing. Here is one of my recent papers:</p>
-            <p><strong>Doe, J., & Smith, A. (2023). An Analysis of Neural Network Architectures for Natural Language Processing. Journal of AI Research, 15(3), 123-145.</strong></p>
-            <a href="https://www.example.com/paper.pdf" class="btn" target="_blank">Paper</a>
-            <a href="https://www.example.com/project" class="btn" target="_blank">Project</a>
+        <div class="content" id="publications">
+            <h2>Publications</h2>
+            <div class="paper">
+                <img src="assets/dynamic.png" alt="Paper Image">
+                <div>
+                    <h3>
+                        Real-time Neural Rendering of Dynamic Light Fields 
+                    </h3>
+                    <p>Arno Coomans, Edoardo A. Dominici, Christian Döring, Joerg H. Mueller, Jozef Hladky, Markus Steinberger<p>
+                    <a href="https://www.example.com/paper.pdf" class="btn" target="_blank">Paper</a>
+                    <a href="https://www.example.com/project" class="btn" target="_blank">Project</a>
+                </div>
+            </div>
         </div>
         <div class="content" id="contact">
             <h2>Contact</h2>
-            <p>You can reach me at:</p>
-            <p>Email: johndoe@example.com</p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/johndoe" target="_blank">John Doe</a></p>
             <div class="social-icons">
                 <a href="https://github.com/doeringchristian" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+                <a href="mailto:doering.christian.2001@gmx.de" target="_blank"><i class="fa fa-envelope fa-2x"></i></a>
             </div>
         </div>
     </div>
