@@ -6,7 +6,7 @@
     --background: #f3f2f0;
     
     --primary: #76a277;
-    --secondary: #eaac3e;
+    --secondary: #716f18;
     --accent: #e27253;
 }
 :root[data-theme="dark"] {
@@ -14,7 +14,7 @@
     --background: #21201d;
     
     --primary: #76a277;
-    --secondary: #eaac3e;
+    --secondary: #716f18;
     --accent: #e27253;
 }
 
