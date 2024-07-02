@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christian Döring</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .toggle-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        .toggle-btn:hover {
+            color: #007BFF;
+        }
+        nav {
+            text-align: center;
+            margin: 1rem 0;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+            padding: 0.5rem;
+        }
+        nav a:hover {
+            color: #007BFF;
+        }
+        .content {
+            background: #fff;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .btn {
+           display: inline-block;
+            padding: 0.5rem 1rem;
+            margin: 0.5rem 0;
+            font-size: 1rem;
+            color: #333;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .btn:hover {
+            background-color: #f4f4f4;
+            border-color: #999;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: #333;
+            color: #fff;
+        }
+        .social-icons a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+        .social-icons a:hover {
+            color: #007BFF;
+        }
+        .dark-mode {
+            background-color: #333;
+            color: #f4f4f4;
+        }
+        .dark-mode header {
+            background-color: #222;
+            color: #f4f4f4;
+        }
+        .dark-mode nav a {
+            color: #f4f4f4;
+        }
+        .dark-mode nav a:hover {
+            color: #007BFF;
+        }
+        .dark-mode .content {
+            background-color: #444;
+            color: #f4f4f4;
+        }
+        .dark-mode .btn {
+            color: #f4f4f4;
+            border-color: #999;
+        }
+        .dark-mode .btn:hover {
+            background-color: #555;
+            border-color: #bbb;
+        }
+        .dark-mode footer {
+            background-color: #222;
+            color: #f4f4f4;
+        }
+        .dark-mode .social-icons a {
+            color: #f4f4f4;
+        }
+        .dark-mode .social-icons a:hover {
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Christian Döring</h1>
+        <p>Welcome to my personal webpage</p>
+        <button class="toggle-btn" onclick="toggleDarkMode()">
+            <i class="fas fa-moon"></i>
+        </button>
+    </header>
+    <div class="container">
+        <nav>
+            <a href="#about">About</a>
+            <a href="#research">Research</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="content" id="about">
+            <h2>About Me</h2>
+            <p>Hello! I am John Doe, a researcher in computer science with a passion for artificial intelligence and machine learning. I am currently working as a senior researcher at Tech University.</p>
+        </div>
+        <div class="content" id="research">
+            <h2>Research</h2>
+            <p>My research focuses on deep learning and its applications in natural language processing. Here is one of my recent papers:</p>
+            <p><strong>Doe, J., & Smith, A. (2023). An Analysis of Neural Network Architectures for Natural Language Processing. Journal of AI Research, 15(3), 123-145.</strong></p>
+            <a href="https://www.example.com/paper.pdf" class="btn" target="_blank">Paper</a>
+            <a href="https://www.example.com/project" class="btn" target="_blank">Project</a>
+        </div>
+        <div class="content" id="contact">
+            <h2>Contact</h2>
+            <p>You can reach me at:</p>
+            <p>Email: johndoe@example.com</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/johndoe" target="_blank">John Doe</a></p>
+            <div class="social-icons">
+                <a href="https://github.com/doeringchristian" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 John Doe. All rights reserved.</p>
+    </footer>
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+</body>
+</html>
