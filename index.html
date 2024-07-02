@@ -5,128 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Christian Döring</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        :root {
-            --text: #080c08;
-            --background: #f3f7f3;
-            --primary: #76a277;
-            --secondary: #a9c6be;
-            --accent: #8eb4ae;
-        }
-        :root[data-theme="dark"] {
-            --text: #f3f7f3;
-            --background: #080c08;
-            --primary: #5d895e;
-            --secondary: #39564e;
-            --accent: #4b716c;
-        }
-        
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--background);
-            color: var(--text);
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        .container {
-            width: 90%;
-            max-width: 800px;
-            margin: auto;
-            overflow: hidden;
-        }
-        header {
-            background: var(--background);
-            color: var(--text);
-            padding: 1rem 0;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-        }
-        .toggle-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: none;
-            border: none;
-            color: var(--text);
-            cursor: pointer;
-            font-size: 1.5rem;
-            transition: color 0.3s;
-        }
-        .toggle-btn:hover {
-            color: var(--accent);
-        }
-        nav {
-            text-align: center;
-            margin: 1rem 0;
-        }
-        nav a {
-            color: var(--text);
-            text-decoration: none;
-            padding: 0.5rem;
-        }
-        nav a:hover {
-            color: var(--accent);
-        }
-        .content {
-            background: var(--background);
-            padding: 2rem;
-            margin: 2rem 0;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .btn {
-           display: inline-block;
-           padding: 0.5rem 1rem;
-           margin: 0.5rem 0;
-           font-size: 1rem;
-           color: var(--text);
-           border: 2px solid var(--secondary);
-           border-radius: 5px;
-           text-decoration: none;
-           text-align: center;
-        }
-        .btn:hover {
-            background-color: var(--background);
-            border-color: var(--accent);
-        }
-        footer {
-            text-align: center;
-            padding: 1rem 0;
-            background: var(--background);
-            color: var(--text);
-            flex-shrink: 0;
-            width: 100%;
-        }
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin: 1rem 0;
-        }
-        .social-icons a {
-            color: var(--text);
-            text-decoration: none;
-            margin: 0 0.5rem;
-        }
-        .social-icons a:hover {
-            color: var(--accent);
-        }
-        .paper {
-            display: flex;
-            align-items: center;
-        }
-        .paper img {
-            margin-right: 1rem;
-            border-radius: 5px;
-            width: 150px;
-            height: auto;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
 <body>
     <header>
@@ -140,10 +19,6 @@
         </button>
     </header>
     <div class="container">
-        <nav>
-            <a href="#about">About</a>
-            <a href="#publications">Publications</a>
-        </nav>
         <div class="content" id="about">
             <h2>About Me</h2>
             <p>Hi, I'm Christian!</p>
@@ -156,18 +31,23 @@
             <p>
             </p>
         </div>
-        <div class="content" id="publications">
+        <div class="content">
             <h2>Publications</h2>
-            <div class="paper">
+            <div class="publication">
                 <img src="assets/dynamic.png" alt="Paper Image">
                 <div>
-                    <h3>
-                        Real-time Neural Rendering of Dynamic Light Fields 
-                    </h3>
+                    <h3>Real-time Neural Rendering of Dynamic Light Fields</h3>
                     <p>Arno Coomans, Edoardo A. Dominici, Christian Döring, Joerg H. Mueller, Jozef Hladky, Markus Steinberger<p>
-                    <a href="https://www.example.com/paper.pdf" class="btn" target="_blank">Paper</a>
-                    <a href="https://www.example.com/project" class="btn" target="_blank">Project</a>
+                    <div class="publication-links">
+                        <a href="https://doi.org/10.1111/cgf.15014" target="_blank">Paper</a>
+                        <a href="https://arnocoomans.be/eg2024" target="_blank">Project</a>
+                    </div>
                 </div>
+            </div>
+        </div>
+        <div class="content">
+            <h2>Projects</h2>
+            <div class="publication">
             </div>
         </div>
     </div>
