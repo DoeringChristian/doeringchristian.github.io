@@ -91,23 +91,53 @@
         <!-- <p>&copy; 2024 Christian Döring. All rights reserved.</p> -->
     </footer>
     <script>
-        function toggleDarkMode() {
-            const body = document.body;
+        const THEME_STORAGE_KEY = "theme";
+        function init_theme(){
+            theme = get_theme();
+            apply_theme(theme);
+        }
+        function get_theme(){
+            const root = document.documentElement;
+            var theme = root.getAttribute('data-theme');
+            
+            const cachedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+            if(cachedTheme){
+                theme = cachedTheme;
+            }
+
+            return theme;
+        }
+        function apply_theme(theme){
             const icon = document.querySelector('.toggle-btn i');
             const root = document.documentElement;
+            
+            localStorage.setItem(THEME_STORAGE_KEY, theme);
 
-            const currentTheme = root.getAttribute('data-theme');
-
-            if (currentTheme === 'dark') {
-                root.setAttribute('data-theme', 'light');
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            } else {
+            // Set theme
+            if (theme === 'dark') {
                 root.setAttribute('data-theme', 'dark');
                 icon.classList.remove('fa-moon');
                 icon.classList.add('fa-sun');
+            } else {
+                root.setAttribute('data-theme', 'light');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
             }
         }
+        function toggle_theme(theme){
+            if(theme == "dark"){
+                return "light";
+            }else{
+                return "dark";
+            }
+        }
+        function toggleDarkMode() {
+            theme = get_theme();
+            console.log(theme);
+            theme = toggle_theme(theme);
+            apply_theme(theme);
+        }
+        window.onload = init_theme();
     </script>
 </body>
 </html>
