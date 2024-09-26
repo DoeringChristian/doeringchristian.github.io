@@ -1,146 +1,173 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Christian Döring</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="styles/main.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
+  </head>
+  <body>
     <header>
-        <h1>Christian Döring</h1>
-        <div class="social-icons">
-            <a href="https://github.com/doeringchristian" target="_blank"><i class="fab fa-github fa-lg"></i></a>
-            <a href="https://www.linkedin.com/in/christian-d%C3%B6ring-7a13872a4/" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
-            <a href="mailto:doering.christian.2001@gmx.de" target="_blank"><i class="fa fa-envelope fa-lg"></i></a>
-        </div>
-        <button class="toggle-btn" onclick="toggleDarkMode()">
-            <i class="fas fa-moon"></i>
-        </button>
+      <h1>Christian Döring</h1>
+      <div class="social-icons">
+        <a href="https://github.com/doeringchristian" target="_blank"
+          ><i class="fab fa-github fa-lg"></i
+        ></a>
+        <a
+          href="https://www.linkedin.com/in/christian-d%C3%B6ring-7a13872a4/"
+          target="_blank"
+          ><i class="fab fa-linkedin fa-lg"></i
+        ></a>
+        <a href="mailto:doering.christian.2001@gmx.de" target="_blank"
+          ><i class="fa fa-envelope fa-lg"></i
+        ></a>
+      </div>
+      <button class="toggle-btn" onclick="toggleDarkMode()">
+        <i class="fas fa-moon"></i>
+      </button>
     </header>
-    <div class = "centered-row">
-        <div class="container">
-            <div class="content">
-                <h2>About Me</h2>
-                <p>Hi, I'm Christian!</p>
-                <p>
-                I'm currently a graduate student at the 
-                <a href="https://www.tum.de/">Technical University of Munich</a>
-                in Electrical and Computer Engineering. <br>
-                In addition to my studies, I work as
-                a Research Engineer at Huawei's Munich Research Center,
-                focusing on neural rendering methods.
-                </p>
-                <p>
-                You can find my <a href="assets/CV/main.pdf">CV</a> here.
-                </p>
-            </div>
-            <div class="content">
-                <h2>Publications</h2>
-                <div class="publication">
-                    <img src="assets/dynamic.png" alt="Paper Image">
-                    <div>
-                        <h3>Real-time Neural Rendering of Dynamic Light Fields</h3>
-                        <div class = "publication-authors">
-                            Arno Coomans, Edoardo A. Dominici, 
-                            <div class = "publication-authors-me">
-                                Christian Döring, 
-                            </div>
-                            Joerg H. Mueller, Jozef Hladky, Markus Steinberger
-                        </div>
-                        <div class = "publication-venue">
-                            Computer Graphics Forum (EG), 2024
-                        </div>
-                        <div class="publication-links">
-                            <a href="https://doi.org/10.1111/cgf.15014" target="_blank">Paper</a>
-                            <a href="https://arnocoomans.be/eg2024" target="_blank">Project</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="content">
-                <h2>Projects</h2>
-                <div class="publication">
-                    <img src = "assets/vulkan-rt.jpg" alt="Image">
-                    <div>
-                        <h3>Vulkan Path-tracer</h3>
-                        <p>
-                        A vulkan path-tracer, written in Rust.
-                        It implements the Disney BSDF and Next Event Estimation.
-                        </p>
-                        <div class = "publication-links">
-                            <a href="https://github.com/DoeringChristian/vulkan-rt/">Source</a>
-                        </div>
-                    </div>
-                </div>
-                <div class = "publication">
-                    <img src="assets/restirgi-staircase.jpg" alt="">
-                    <div>
-                        <h3>Mitsuba3 Implementation of ReSTIR GI</h3>
-                        <p>
-                        Implementation of the <a href="https://research.nvidia.com/publication/2021-06_restir-gi-path-resampling-real-time-path-tracing">ReSTIR GI</a> algorithm in
-                        the <a href="https://www.mitsuba-renderer.org/">Mitsuba3</a> rendering framework.
-                        </p>
-                        <div class = "publication-links">
-                            <a href="https://github.com/DoeringChristian/restirgi/">Source</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="centered-row">
+      <div class="container">
+        <div class="content">
+          <h2>About Me</h2>
+          <p>Hi, I'm Christian!</p>
+          <p>
+            I'm currently a graduate student at the
+            <a href="https://www.tum.de/">Technical University of Munich</a>
+            in Electrical and Computer Engineering. <br />
+            In addition to my studies, I work as a Research Engineer at Huawei's
+            Munich Research Center, focusing on neural rendering methods.
+          </p>
+          <p>
+            You can find my
+            <a
+              href="https://github.com/DoeringChristian/CV/blob/main/main.pdf?raw=true"
+              >CV</a
+            >
+            here.
+          </p>
         </div>
+        <div class="content">
+          <h2>Publications</h2>
+          <div class="publication">
+            <img src="assets/dynamic.png" alt="Paper Image" />
+            <div>
+              <h3>Real-time Neural Rendering of Dynamic Light Fields</h3>
+              <div class="publication-authors">
+                Arno Coomans, Edoardo A. Dominici,
+                <div class="publication-authors-me">Christian Döring,</div>
+                Joerg H. Mueller, Jozef Hladky, Markus Steinberger
+              </div>
+              <div class="publication-venue">
+                Computer Graphics Forum (EG), 2024
+              </div>
+              <div class="publication-links">
+                <a href="https://doi.org/10.1111/cgf.15014" target="_blank"
+                  >Paper</a
+                >
+                <a href="https://arnocoomans.be/eg2024" target="_blank"
+                  >Project</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <h2>Projects</h2>
+          <div class="publication">
+            <img src="assets/vulkan-rt.jpg" alt="Image" />
+            <div>
+              <h3>Vulkan Path-tracer</h3>
+              <p>
+                A vulkan path-tracer, written in Rust. It implements the Disney
+                BSDF and Next Event Estimation.
+              </p>
+              <div class="publication-links">
+                <a href="https://github.com/DoeringChristian/vulkan-rt/"
+                  >Source</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="publication">
+            <img src="assets/restirgi-staircase.jpg" alt="" />
+            <div>
+              <h3>Mitsuba3 Implementation of ReSTIR GI</h3>
+              <p>
+                Implementation of the
+                <a
+                  href="https://research.nvidia.com/publication/2021-06_restir-gi-path-resampling-real-time-path-tracing"
+                  >ReSTIR GI</a
+                >
+                algorithm in the
+                <a href="https://www.mitsuba-renderer.org/">Mitsuba3</a>
+                rendering framework.
+              </p>
+              <div class="publication-links">
+                <a href="https://github.com/DoeringChristian/restirgi/"
+                  >Source</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <footer>
-        <!-- <p>&copy; 2024 Christian Döring. All rights reserved.</p> -->
+      <!-- <p>&copy; 2024 Christian Döring. All rights reserved.</p> -->
     </footer>
     <script>
-        const THEME_STORAGE_KEY = "theme";
-        function init_theme(){
-            theme = get_theme();
-            apply_theme(theme);
-        }
-        function get_theme(){
-            const root = document.documentElement;
-            var theme = root.getAttribute('data-theme');
-            
-            const cachedTheme = localStorage.getItem(THEME_STORAGE_KEY);
-            if(cachedTheme){
-                theme = cachedTheme;
-            }
+      const THEME_STORAGE_KEY = "theme";
+      function init_theme() {
+        theme = get_theme();
+        apply_theme(theme);
+      }
+      function get_theme() {
+        const root = document.documentElement;
+        var theme = root.getAttribute("data-theme");
 
-            return theme;
+        const cachedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+        if (cachedTheme) {
+          theme = cachedTheme;
         }
-        function apply_theme(theme){
-            const icon = document.querySelector('.toggle-btn i');
-            const root = document.documentElement;
-            
-            localStorage.setItem(THEME_STORAGE_KEY, theme);
 
-            // Set theme
-            if (theme === 'dark') {
-                root.setAttribute('data-theme', 'dark');
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-            } else {
-                root.setAttribute('data-theme', 'light');
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            }
+        return theme;
+      }
+      function apply_theme(theme) {
+        const icon = document.querySelector(".toggle-btn i");
+        const root = document.documentElement;
+
+        localStorage.setItem(THEME_STORAGE_KEY, theme);
+
+        // Set theme
+        if (theme === "dark") {
+          root.setAttribute("data-theme", "dark");
+          icon.classList.remove("fa-moon");
+          icon.classList.add("fa-sun");
+        } else {
+          root.setAttribute("data-theme", "light");
+          icon.classList.remove("fa-sun");
+          icon.classList.add("fa-moon");
         }
-        function toggle_theme(theme){
-            if(theme == "dark"){
-                return "light";
-            }else{
-                return "dark";
-            }
+      }
+      function toggle_theme(theme) {
+        if (theme == "dark") {
+          return "light";
+        } else {
+          return "dark";
         }
-        function toggleDarkMode() {
-            theme = get_theme();
-            console.log(theme);
-            theme = toggle_theme(theme);
-            apply_theme(theme);
-        }
-        window.onload = init_theme();
+      }
+      function toggleDarkMode() {
+        theme = get_theme();
+        console.log(theme);
+        theme = toggle_theme(theme);
+        apply_theme(theme);
+      }
+      window.onload = init_theme();
     </script>
-</body>
+  </body>
 </html>
