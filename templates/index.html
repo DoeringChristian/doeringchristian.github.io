@@ -39,8 +39,16 @@
     <div class="centered-row">
       <div class="container">
         <div class="content">
-          <h2>About Me</h2>
-          {{section.description | markdown(inline = false) | safe}}
+          <div class="about">
+            <div>
+              <h2>About Me</h2>
+              {{section.description | markdown(inline = false) | safe}}
+            </div>
+
+            {% set image = resize_image(path = "assets/profile.jpg", width =
+            400, height = 400)%}
+            <img src="{{image.url}}" alt="Profile Image" />
+          </div>
         </div>
         <div class="content">
           <h2>Publications</h2>
