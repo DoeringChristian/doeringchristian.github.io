@@ -4,7 +4,7 @@
 :root {
     --text: #080808;
     --background: #f3f2f0;
-    
+
     --primary: #76a277;
     --secondary: var(--primary);
     --accent: #e27253;
@@ -12,7 +12,7 @@
 :root[data-theme="dark"] {
     --text: #f7f7f7;
     --background: #21201d;
-    
+
     --primary: #76a277;
     --secondary: var(--primary);
     --accent: #e27253;
@@ -142,7 +142,7 @@ footer {
     border-radius: 5px;
     text-decoration: none;
     text-align: center;
-    
+
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     margin-right: 0.5rem;

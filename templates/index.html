@@ -9,7 +9,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <link rel="stylesheet" type="text/css" href="styles/main.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
     <header>
@@ -40,59 +40,45 @@
       <div class="container">
         <div class="content">
           <h2>About Me</h2>
-          <p>Hi, I'm Christian!</p>
-          <p>
-            I'm currently a graduate student at the
-            <a href="https://www.tum.de/">Technical University of Munich </a>
-            (<abbr>TUM</abbr>) in Electrical and Computer Engineering. <br />
-            In addition to my studies, I'm a Research Intern at Huawei's Munich
-            Research Center, focusing on neural rendering methods. There, I have
-            gained experience working with Mitsuba3 and Dr.Jit.
-          </p>
-          <p>
-            You can find my
-            <a
-              href="https://github.com/DoeringChristian/CV/blob/main/main.pdf?raw=true"
-              >CV</a
-            >
-            here.
-          </p>
+          {{section.description | markdown(inline = false) | safe}}
         </div>
         <div class="content">
           <h2>Publications</h2>
+          {% set publications = get_section(path = "publications/_index.md") %}
+          {% for pub in publications.pages %} {% set image = resize_image(path =
+          pub.extra.image, width = 300, height = 300) %}
           <div class="publication">
-            <img src="assets/dynamic.png" alt="Paper Image" />
+            <img src="{{image.url}}" alt="Paper Image" />
             <div>
-              <h3>Real-time Neural Rendering of Dynamic Light Fields</h3>
+              <h3>{{ pub.title }}</h3>
               <div class="publication-authors">
-                Arno Coomans, Edoardo A. Dominici,
-                <div class="publication-authors-me">Christian Döring,</div>
-                Joerg H. Mueller, Jozef Hladky, Markus Steinberger
+                {{pub.authors | join(sep = ", ") | markdown(inline = true) |
+                safe}}
               </div>
-              <div class="publication-venue">
-                Computer Graphics Forum (EG), 2024
-              </div>
+              <div class="publication-venue">{{pub.extra.venue}}</div>
               <div class="publication-links">
-                <a href="https://doi.org/10.1111/cgf.15014" target="_blank"
-                  >Paper</a
-                >
-                <a href="https://arnocoomans.be/eg2024" target="_blank"
-                  >Project</a
-                >
+                {% if pub.extra.paper_link %}
+                <a href="{{pub.extra.paper_link}}" target="_blank">Paper</a>
+                {%endif%} {% if pub.extra.project_link %}
+                <a href="{{pub.extra.project_link}}" target="_blank">Project</a>
+                {%endif%}
               </div>
             </div>
           </div>
+          {% endfor %}
         </div>
         <div class="content">
           <h2>Projects</h2>
+
+          {% set projects = get_section(path = "projects/_index.md") %} {% for
+          project in projects.pages %} {% set image = resize_image(path =
+          project.extra.image, width = 300, height = 300) %}
+
           <div class="publication">
-            <img src="assets/vulkan-rt.jpg" alt="Image" />
+            <img src="{{image.url}}" alt="Image" />
             <div>
-              <h3>Vulkan Path-tracer</h3>
-              <p>
-                A vulkan path-tracer, written in Rust. It implements the Disney
-                BSDF and Next Event Estimation.
-              </p>
+              <h3>{{project.title}}</h3>
+              <p>{{project.description | markdown(inline = true) | safe }}</p>
               <div class="publication-links">
                 <a href="https://github.com/DoeringChristian/vulkan-rt/"
                   >Source</a
@@ -100,27 +86,7 @@
               </div>
             </div>
           </div>
-          <div class="publication">
-            <img src="assets/restirgi-staircase.jpg" alt="" />
-            <div>
-              <h3>Mitsuba3 Implementation of ReSTIR GI</h3>
-              <p>
-                Implementation of the
-                <a
-                  href="https://research.nvidia.com/publication/2021-06_restir-gi-path-resampling-real-time-path-tracing"
-                  >ReSTIR GI</a
-                >
-                algorithm in the
-                <a href="https://www.mitsuba-renderer.org/">Mitsuba3</a>
-                rendering framework.
-              </p>
-              <div class="publication-links">
-                <a href="https://github.com/DoeringChristian/restirgi/"
-                  >Source</a
-                >
-              </div>
-            </div>
-          </div>
+          {% endfor %}
         </div>
       </div>
     </div>
