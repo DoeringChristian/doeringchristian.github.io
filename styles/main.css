@@ -173,7 +173,7 @@ footer {
 }
 .publication-authors-me {
     color: var(--accent);
-    opacity: 0.6;
+    /* opacity: 0.6; */
     display: inline;
 }
 .publication-venue {
