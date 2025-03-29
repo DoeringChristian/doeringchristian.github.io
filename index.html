@@ -64,7 +64,11 @@
                 here.
               </p>
             </div>
-            <img src="assets/profile_400_0.jpg" alt="Profile Image" />
+            <img
+              src="assets/profile_400_2.jpg"
+              alt="Profile Image"
+              id="profile_picture"
+            />
           </div>
         </div>
         <div class="content">
@@ -184,6 +188,18 @@
         apply_theme(theme);
       }
       window.onload = init_theme();
+    </script>
+    <script>
+      var base = "assets/profile_400";
+      var images = ["0.jpg", "2.jpg"];
+
+      function load_random_image() {
+        var index = Math.floor(Math.random() * images.length);
+        document.getElementById("profile_picture").src =
+          base + "/" + images[index];
+      }
+
+      window.onload = load_random_image;
     </script>
   </body>
 </html>
