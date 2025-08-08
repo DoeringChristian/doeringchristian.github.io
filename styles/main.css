@@ -145,6 +145,12 @@ footer {
     width: 200px;
     height: auto;
 }
+.publication object {
+    margin-right: 1rem;
+    border-radius: 5px;
+    width: 200px;
+    height: auto;
+}
 .publication-links {
     display: flex;
     flex-direction: row;
