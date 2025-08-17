@@ -141,7 +141,7 @@ footer {
 }
 .publication img {
     margin-right: 1rem;
-    border-radius: 5px;
+    border-radius: 10px;
     width: 200px;
     height: auto;
 }
