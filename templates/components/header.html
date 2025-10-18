@@ -1,0 +1,19 @@
+<header>
+  <div class="top-bar">
+    <nav>
+      <a href="index.html"><i class="fas fa-home"></i></a>
+      <a href="photography.html"><i class="fas fa-camera"></i></a>
+    </nav>
+    <button class="toggle-btn" onclick="toggleDarkMode()">
+      <i class="fas fa-moon"></i>
+    </button>
+  </div>
+  <h1>{{ data.name }}</h1>
+  <div class="social-icons">
+    {% for social in data.socials %}
+    <a href="{{ social.url }}" target="_blank"
+      ><i class="{{ social.icon }}"></i
+    ></a>
+    {% endfor %}
+  </div>
+</header>

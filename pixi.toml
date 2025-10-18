@@ -1,0 +1,14 @@
+[workspace]
+authors = ["Christian Döring <christian.doering@tum.de>"]
+channels = ["conda-forge"]
+name = "profile-page"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = ">=3.9"
+pyyaml = "*"
+jinja2 = "*"
+omegaconf = "*"

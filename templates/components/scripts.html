@@ -1,0 +1,49 @@
+<script>
+  const THEME_STORAGE_KEY = "theme";
+  function get_theme() {
+    return document.documentElement.getAttribute("data-theme");
+  }
+  function apply_theme_icon(theme) {
+    const icon = document.querySelector(".toggle-btn i");
+    if (theme === "dark") {
+      icon.classList.remove("fa-moon");
+      icon.classList.add("fa-sun");
+    } else {
+      icon.classList.remove("fa-sun");
+      icon.classList.add("fa-moon");
+    }
+  }
+  function toggle_theme(theme) {
+    if (theme == "dark") {
+      return "light";
+    } else {
+      return "dark";
+    }
+  }
+  function toggleDarkMode() {
+    let theme = get_theme();
+    theme = toggle_theme(theme);
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem(THEME_STORAGE_KEY, theme);
+    apply_theme_icon(theme);
+  }
+
+  var images = [
+    {% for photo in data.photographs %}
+      "{{ photo.src }}",
+    {% endfor %}
+  ];
+
+  function load_random_image() {
+    var index = Math.floor(Math.random() * images.length);
+    var profile_picture = document.getElementById("profile_picture");
+    if (profile_picture) {
+        profile_picture.src = images[index];
+    }
+  }
+
+  window.onload = function () {
+    apply_theme_icon(get_theme());
+    load_random_image();
+  };
+</script>

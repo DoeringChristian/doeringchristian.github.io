@@ -1,0 +1,21 @@
+<div class="content">
+  <h2>Publications</h2>
+  {% for publication in data.publications %}
+  <div class="publication">
+    <img src="{{ publication.image }}" alt="Paper Image" />
+    <div>
+      <h3>{{ publication.title }}</h3>
+      <div class="publication-authors">
+        {{ publication.authors }}
+      </div>
+      <div class="publication-venue">
+        {{ publication.venue }}
+      </div>
+      <div class="publication-links">
+        <a href="{{ publication.url }}" target="_blank">Paper</a>
+        <a href="{{ publication.project }}" target="_blank">Project</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>

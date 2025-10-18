@@ -21,76 +21,117 @@
   </head>
   <body>
     <header>
-      <div class="top-bar">
-        <nav>
-          <a href="index.html"><i class="fas fa-home"></i></a>
-          <a href="photography.html"><i class="fas fa-camera"></i></a>
-        </nav>
-        <button class="toggle-btn" onclick="toggleDarkMode()">
-          <i class="fas fa-moon"></i>
-        </button>
-      </div>
-      <h1>Christian Döring</h1>
-      <div class="social-icons">
-        <a href="https://github.com/doeringchristian" target="_blank"
-          ><i class="fab fa-github fa-lg"></i
-        ></a>
-        <a
-          href="https://www.linkedin.com/in/christian-d%C3%B6ring-7a13872a4/"
-          target="_blank"
-          ><i class="fab fa-linkedin fa-lg"></i
-        ></a>
-        <a href="mailto:doeringc2001@gmail.com" target="_blank"
-          ><i class="fa fa-envelope fa-lg"></i
-        ></a>
-        <a
-          href="https://scholar.google.ch/citations?user=yJIqy00AAAAJ&hl=en"
-          target="_blank"
-          ><i class="fa fa-graduation-cap"></i
-        ></a>
-      </div>
-    </header>
+  <div class="top-bar">
+    <nav>
+      <a href="index.html"><i class="fas fa-home"></i></a>
+      <a href="photography.html"><i class="fas fa-camera"></i></a>
+    </nav>
+    <button class="toggle-btn" onclick="toggleDarkMode()">
+      <i class="fas fa-moon"></i>
+    </button>
+  </div>
+  <h1>Christian Döring</h1>
+  <div class="social-icons">
+    
+    <a href="https://github.com/doeringchristian" target="_blank"
+      ><i class="fab fa-github fa-lg"></i
+    ></a>
+    
+    <a href="https://www.linkedin.com/in/christian-d%C3%B6ring-7a13872a4/" target="_blank"
+      ><i class="fab fa-linkedin fa-lg"></i
+    ></a>
+    
+    <a href="mailto:doeringc2001@gmail.com" target="_blank"
+      ><i class="fa fa-envelope fa-lg"></i
+    ></a>
+    
+    <a href="https://scholar.google.ch/citations?user=yJIqy00AAAAJ&hl=en" target="_blank"
+      ><i class="fa fa-graduation-cap"></i
+    ></a>
+    
+  </div>
+</header>
+
     <div class="centered-row">
       <div class="container">
-        <div class="content">
-          <h2>Photography</h2>
-          <p>This is my photography page. I will upload some images soon.</p>
-        </div>
+        
+  <div class="content">
+  <h2>Photography</h2>
+  <div class="gallery">
+    
+    <a href="assets/profile_400/0.jpg" target="_blank">
+      <img src="assets/profile_400/0.jpg" alt="A photograph">
+    </a>
+    
+    <a href="assets/profile_400/1.jpg" target="_blank">
+      <img src="assets/profile_400/1.jpg" alt="Another photograph">
+    </a>
+    
+    <a href="assets/profile_400/2.jpg" target="_blank">
+      <img src="assets/profile_400/2.jpg" alt="And another one">
+    </a>
+    
+  </div>
+</div>
+
       </div>
     </div>
-    <script>
-      const THEME_STORAGE_KEY = "theme";
-      function get_theme() {
-        return document.documentElement.getAttribute("data-theme");
-      }
-      function apply_theme_icon(theme) {
-        const icon = document.querySelector(".toggle-btn i");
-        if (theme === "dark") {
-          icon.classList.remove("fa-moon");
-          icon.classList.add("fa-sun");
-        } else {
-          icon.classList.remove("fa-sun");
-          icon.classList.add("fa-moon");
-        }
-      }
-      function toggle_theme(theme) {
-        if (theme == "dark") {
-          return "light";
-        } else {
-          return "dark";
-        }
-      }
-      function toggleDarkMode() {
-        let theme = get_theme();
-        theme = toggle_theme(theme);
-        document.documentElement.setAttribute("data-theme", theme);
-        localStorage.setItem(THEME_STORAGE_KEY, theme);
-        apply_theme_icon(theme);
-      }
 
-      window.onload = function () {
-        apply_theme_icon(get_theme());
-      };
-    </script>
+    <footer>
+  <!-- <p>&copy; 2024 Christian Döring. All rights reserved.</p> -->
+</footer>
+    <script>
+  const THEME_STORAGE_KEY = "theme";
+  function get_theme() {
+    return document.documentElement.getAttribute("data-theme");
+  }
+  function apply_theme_icon(theme) {
+    const icon = document.querySelector(".toggle-btn i");
+    if (theme === "dark") {
+      icon.classList.remove("fa-moon");
+      icon.classList.add("fa-sun");
+    } else {
+      icon.classList.remove("fa-sun");
+      icon.classList.add("fa-moon");
+    }
+  }
+  function toggle_theme(theme) {
+    if (theme == "dark") {
+      return "light";
+    } else {
+      return "dark";
+    }
+  }
+  function toggleDarkMode() {
+    let theme = get_theme();
+    theme = toggle_theme(theme);
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem(THEME_STORAGE_KEY, theme);
+    apply_theme_icon(theme);
+  }
+
+  var images = [
+    
+      "assets/profile_400/0.jpg",
+    
+      "assets/profile_400/1.jpg",
+    
+      "assets/profile_400/2.jpg",
+    
+  ];
+
+  function load_random_image() {
+    var index = Math.floor(Math.random() * images.length);
+    var profile_picture = document.getElementById("profile_picture");
+    if (profile_picture) {
+        profile_picture.src = images[index];
+    }
+  }
+
+  window.onload = function () {
+    apply_theme_icon(get_theme());
+    load_random_image();
+  };
+</script>
   </body>
 </html>
