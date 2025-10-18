@@ -27,9 +27,6 @@
       <div class="top-bar">
         <nav>
           <a href="index.html"><i class="fas fa-home"></i></a>
-
-          <!-- <a href="index.html"><i class="fas fa-home"></i></a> -->
-          <!-- <a href="photography.html"><i class="fas fa-camera"></i></a> -->
         </nav>
         <button class="toggle-btn" onclick="toggleDarkMode()">
           <i class="fas fa-moon"></i>
@@ -63,11 +60,21 @@
       <h2>Photography</h2>
       <div class="gallery">
         <a href="assets/photo/Nuremberg-Table.jpg" target="_blank">
-          <img src="assets/photo/Nuremberg-Table.jpg" alt="A photograph" />
+          <img
+            class="lazyload"
+            src="assets/photo/low_res/Nuremberg-Table.jpg"
+            data-src="assets/photo/Nuremberg-Table.jpg"
+            alt="A photograph"
+          />
         </a>
 
         <a href="assets/photo/Lausanne-Lake.jpg" target="_blank">
-          <img src="assets/photo/Lausanne-Lake.jpg" alt="A photograph" />
+          <img
+            class="lazyload"
+            src="assets/photo/low_res/Lausanne-Lake.jpg"
+            data-src="assets/photo/Lausanne-Lake.jpg"
+            alt="A photograph"
+          />
         </a>
       </div>
     </div>
@@ -104,6 +111,35 @@
 
       window.onload = function () {
         apply_theme_icon(get_theme());
+
+        // Lazy loading for images
+        const lazyImages = document.querySelectorAll("img.lazyload");
+
+        if ("IntersectionObserver" in window) {
+          let lazyImageObserver = new IntersectionObserver(function (
+            entries,
+            observer,
+          ) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                let lazyImage = entry.target;
+                lazyImage.src = lazyImage.dataset.src;
+                lazyImage.classList.remove("lazyload");
+                lazyImageObserver.unobserve(lazyImage);
+              }
+            });
+          });
+
+          lazyImages.forEach(function (lazyImage) {
+            lazyImageObserver.observe(lazyImage);
+          });
+        } else {
+          // Fallback for browsers that don't support IntersectionObserver
+          lazyImages.forEach(function (lazyImage) {
+            lazyImage.src = lazyImage.dataset.src;
+            lazyImage.classList.remove("lazyload");
+          });
+        }
       };
     </script>
   </body>

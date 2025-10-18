@@ -32,7 +32,9 @@
     object-fit: unset; /* Ensure full image is shown without cropping */
     border-radius: 8px; /* Rounded corners */
     box-shadow: none; /* No shadow */
+    position: relative; /* Needed for z-index to work */
 }
 .gallery img:hover {
-    transform: scale(1.01); /* Slightly enlarge on hover, reduced to prevent overlap */
+    z-index: 1; /* Bring hovered image to the front */
+    transform: scale(1.05); /* Slightly enlarge on hover */
 }
