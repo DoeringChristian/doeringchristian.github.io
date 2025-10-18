@@ -57,9 +57,6 @@ projects:
       href="https://www.mitsuba-renderer.org/">Mitsuba3</a> rendering framework.'
     image: "assets/restirgi-staircase.jpg"
     url: "https://github.com/DoeringChristian/restirgi/"
-photographs:
-  - src: "assets/photo/Nuremberg-Table.jpg"
-  - src: "assets/photo/Lausanne-Lake.jpg"
 publications:
   - title: "Real-time Neural Rendering of Dynamic Light Fields"
     authors:

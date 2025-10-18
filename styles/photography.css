@@ -36,5 +36,5 @@
 }
 .gallery img:hover {
     z-index: 1; /* Bring hovered image to the front */
-    transform: scale(1.05); /* Slightly enlarge on hover */
+    transform: scale(1.01); /* Slightly enlarge on hover */
 }
