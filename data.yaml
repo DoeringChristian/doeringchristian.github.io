@@ -27,6 +27,7 @@ socials:
     icon: "fa fa-envelope fa-lg"
   - url: "https://scholar.google.ch/citations?user=yJIqy00AAAAJ&hl=en"
     icon: "fa fa-graduation-cap"
+picture: assets/profile_400/2.jpg
 
 projects:
   - title: "Dr.Jit Function Freezing"
@@ -52,12 +53,8 @@ projects:
     image: "assets/restirgi-staircase.jpg"
     url: "https://github.com/DoeringChristian/restirgi/"
 photographs:
-  - src: "assets/profile_400/0.jpg"
-    alt: "A photograph"
-  - src: "assets/profile_400/1.jpg"
-    alt: "Another photograph"
-  - src: "assets/profile_400/2.jpg"
-    alt: "And another one"
+  - src: "assets/photo/Nuremberg-Table.jpg"
+  - src: "assets/photo/Lausanne-Lake.jpg"
 publications:
   - title: "Real-time Neural Rendering of Dynamic Light Fields"
     authors:
