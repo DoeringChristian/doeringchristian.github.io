@@ -37,9 +37,14 @@
 }
 
 /* Responsive adjustments for column count */
-@media (width <= 800px) {
+@media (width <= 1200px) {
     .gallery {
         column-count: 2; /* 2 columns on tablets */
+    }
+}
+@media (width <= 800px) {
+    .gallery {
+        column-count: 1; /* 2 columns on tablets */
     }
 }
 
