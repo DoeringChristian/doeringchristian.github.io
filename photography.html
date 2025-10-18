@@ -11,10 +11,10 @@
     />
     <link rel="stylesheet" type="text/css" href="styles/main.css" />
     <script>
-      (function() {
-        const theme = localStorage.getItem('theme');
+      (function () {
+        const theme = localStorage.getItem("theme");
         if (theme) {
-          document.documentElement.setAttribute('data-theme', theme);
+          document.documentElement.setAttribute("data-theme", theme);
         }
       })();
     </script>
@@ -23,8 +23,8 @@
     <header>
       <div class="top-bar">
         <nav>
-          <a href="index.html">Home</a>
-          <a href="photography.html">Photography</a>
+          <a href="index.html"><i class="fas fa-home"></i></a>
+          <a href="photography.html"><i class="fas fa-camera"></i></a>
         </nav>
         <button class="toggle-btn" onclick="toggleDarkMode()">
           <i class="fas fa-moon"></i>
@@ -51,12 +51,12 @@
       </div>
     </header>
     <div class="centered-row">
-        <div class="container">
-            <div class="content">
-                <h2>Photography</h2>
-                <p>This is my photography page. I will upload some images soon.</p>
-            </div>
+      <div class="container">
+        <div class="content">
+          <h2>Photography</h2>
+          <p>This is my photography page. I will upload some images soon.</p>
         </div>
+      </div>
     </div>
     <script>
       const THEME_STORAGE_KEY = "theme";
@@ -88,9 +88,9 @@
         apply_theme_icon(theme);
       }
 
-      window.onload = function() {
+      window.onload = function () {
         apply_theme_icon(get_theme());
-      }
+      };
     </script>
   </body>
 </html>
