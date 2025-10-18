@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Christian Döring - Photography</title>
+    <link rel="canonical" href="https://doeringc.de/photography" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Christian Döring</h1>
+      <div class="social-icons">
+        <a href="https://github.com/doeringchristian" target="_blank"
+          ><i class="fab fa-github fa-lg"></i
+        ></a>
+        <a
+          href="https://www.linkedin.com/in/christian-d%C3%B6ring-7a13872a4/"
+          target="_blank"
+          ><i class="fab fa-linkedin fa-lg"></i
+        ></a>
+        <a href="mailto:doeringc2001@gmail.com" target="_blank"
+          ><i class="fa fa-envelope fa-lg"></i
+        ></a>
+        <a
+          href="https://scholar.google.ch/citations?user=yJIqy00AAAAJ&hl=en"
+          target="_blank"
+          ><i class="fa fa-graduation-cap"></i
+        ></a>
+      </div>
+      <button class="toggle-btn" onclick="toggleDarkMode()">
+        <i class="fas fa-moon"></i>
+      </button>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="photography.html">Photography</a>
+    </nav>
+    <div class="centered-row">
+        <div class="container">
+            <div class="content">
+                <h2>Photography</h2>
+                <p>This is my photography page. I will upload some images soon.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+      const THEME_STORAGE_KEY = "theme";
+      function init_theme() {
+        theme = get_theme();
+        apply_theme(theme);
+      }
+      function get_theme() {
+        const root = document.documentElement;
+        var theme = root.getAttribute("data-theme");
+
+        const cachedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+        if (cachedTheme) {
+          theme = cachedTheme;
+        }
+
+        return theme;
+      }
+      function apply_theme(theme) {
+        const icon = document.querySelector(".toggle-btn i");
+        const root = document.documentElement;
+
+        localStorage.setItem(THEME_STORAGE_KEY, theme);
+
+        // Set theme
+        if (theme === "dark") {
+          root.setAttribute("data-theme", "dark");
+          icon.classList.remove("fa-moon");
+          icon.classList.add("fa-sun");
+        } else {
+          root.setAttribute("data-theme", "light");
+          icon.classList.remove("fa-sun");
+          icon.classList.add("fa-moon");
+        }
+      }
+      function toggle_theme(theme) {
+        if (theme == "dark") {
+          return "light";
+        } else {
+          return "dark";
+        }
+      }
+      function toggleDarkMode() {
+        theme = get_theme();
+        console.log(theme);
+        theme = toggle_theme(theme);
+        apply_theme(theme);
+      }
+      window.onload = init_theme();
+    </script>
+  </body>
+</html>

@@ -75,15 +75,22 @@ header h1 {
 }
 nav {
     text-align: center;
-    margin: 1rem 0;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--primary);
 }
+
 nav a {
     color: var(--text);
     text-decoration: none;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
+
 nav a:hover {
-    color: var(--accent);
+    background-color: var(--primary);
+    color: var(--background);
 }
 .content {
     display: flex;

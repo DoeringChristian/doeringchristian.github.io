@@ -36,6 +36,10 @@
         <i class="fas fa-moon"></i>
       </button>
     </header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="photography.html">Photography</a>
+    </nav>
     <div class="centered-row">
       <div class="container">
         <div class="content">
@@ -222,9 +226,7 @@
         theme = toggle_theme(theme);
         apply_theme(theme);
       }
-      window.onload = init_theme();
-    </script>
-    <script>
+
       var base = "assets/profile_400";
       var images = ["2.jpg"];
 
@@ -234,7 +236,10 @@
           base + "/" + images[index];
       }
 
-      window.onload = load_random_image;
+      window.onload = function () {
+        init_theme();
+        load_random_image();
+      };
     </script>
   </body>
 </html>
