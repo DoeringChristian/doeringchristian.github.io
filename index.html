@@ -10,6 +10,14 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <link rel="stylesheet" type="text/css" href="styles/main.css" />
+    <script>
+      (function () {
+        const theme = localStorage.getItem("theme");
+        if (theme) {
+          document.documentElement.setAttribute("data-theme", theme);
+        }
+      })();
+    </script>
   </head>
   <body>
     <header>
@@ -181,34 +189,15 @@
     </footer>
     <script>
       const THEME_STORAGE_KEY = "theme";
-      function init_theme() {
-        theme = get_theme();
-        apply_theme(theme);
-      }
       function get_theme() {
-        const root = document.documentElement;
-        var theme = root.getAttribute("data-theme");
-
-        const cachedTheme = localStorage.getItem(THEME_STORAGE_KEY);
-        if (cachedTheme) {
-          theme = cachedTheme;
-        }
-
-        return theme;
+        return document.documentElement.getAttribute("data-theme");
       }
-      function apply_theme(theme) {
+      function apply_theme_icon(theme) {
         const icon = document.querySelector(".toggle-btn i");
-        const root = document.documentElement;
-
-        localStorage.setItem(THEME_STORAGE_KEY, theme);
-
-        // Set theme
         if (theme === "dark") {
-          root.setAttribute("data-theme", "dark");
           icon.classList.remove("fa-moon");
           icon.classList.add("fa-sun");
         } else {
-          root.setAttribute("data-theme", "light");
           icon.classList.remove("fa-sun");
           icon.classList.add("fa-moon");
         }
@@ -221,10 +210,11 @@
         }
       }
       function toggleDarkMode() {
-        theme = get_theme();
-        console.log(theme);
+        let theme = get_theme();
         theme = toggle_theme(theme);
-        apply_theme(theme);
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem(THEME_STORAGE_KEY, theme);
+        apply_theme_icon(theme);
       }
 
       var base = "assets/profile_400";
@@ -237,7 +227,7 @@
       }
 
       window.onload = function () {
-        init_theme();
+        apply_theme_icon(get_theme());
         load_random_image();
       };
     </script>
