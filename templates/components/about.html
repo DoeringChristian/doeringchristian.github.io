@@ -2,7 +2,9 @@
   <div class="about">
     <div class="about-info">
       <h2>About Me</h2>
-      <p>{{ data.bio }}</p>
+      {% for p in data.bio %}
+      <p>{{ p }}</p>
+      {% endfor %}
     </div>
     <img
       src="{{ data.photographs[2].src }}"

@@ -1,19 +1,23 @@
 name: "Christian Döring"
 bio:
-  '<p>Hi, I''m Christian! <p/> <p>I''m a graduate student in Electrical and
-  Computer Engineering at the <a href="https://www.tum.de/">Technical University
-  of Munich </a> (<abbr>TUM</abbr>).<br />Currently I''m writing my Masters
-  Thesis as an exchange student at the <i>Swiss Federal Institute of Technology
-  (<strong>EPFL</strong>)</i>. Previously I interned at both Huawei''s
-  <nobr>Munich Research Center</nobr> and <nobr>NVIDIA Switzerland</nobr>, where
-  I gained experience in Neural as well as Differentiable Rendering. During
-  these internships I worked with the <nobr><strong>Mitsuba 3</strong></nobr>
-  rendering framework, and developed a <a
-  href="https://drjit.readthedocs.io/en/stable/freeze.html">function level
-  caching feature</a> for the <strong>Dr.Jit</strong> just-in-time compiler.
-  <p/> <p>You can find my <a
-  href="https://github.com/DoeringChristian/CV/blob/main/build/main.pdf?raw=true">CV</a>
-  here.</p>'
+  - >
+    Hi, I''m Christian!
+  - >
+    I''m a graduate student in Electrical and Computer Engineering at the <a
+    href="https://www.tum.de/">Technical University of Munich </a>
+    (<abbr>TUM</abbr>).<br />Currently I''m writing my Masters Thesis as an
+    exchange student at the <i>Swiss Federal Institute of Technology
+    (<strong>EPFL</strong>)</i>. Previously I interned at both Huawei''s
+    <nobr>Munich Research Center</nobr> and <nobr>NVIDIA Switzerland</nobr>,
+    where I gained experience in Neural as well as Differentiable Rendering.
+    During these internships I worked with the <nobr><strong>Mitsuba
+    3</strong></nobr> rendering framework, and developed a <a
+    href="https://drjit.readthedocs.io/en/stable/freeze.html">function level
+    caching feature</a> for the <strong>Dr.Jit</strong> just-in-time compiler.
+  - >
+    <p/> <p>You can find my <a
+    href="https://github.com/DoeringChristian/CV/blob/main/build/main.pdf?raw=true">CV</a>
+    here.
 socials:
   - url: "https://github.com/doeringchristian"
     icon: "fab fa-github fa-lg"

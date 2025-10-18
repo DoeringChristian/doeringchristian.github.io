@@ -28,22 +28,7 @@
     apply_theme_icon(theme);
   }
 
-  var images = [
-    {% for photo in data.photographs %}
-      "{{ photo.src }}",
-    {% endfor %}
-  ];
-
-  function load_random_image() {
-    var index = Math.floor(Math.random() * images.length);
-    var profile_picture = document.getElementById("profile_picture");
-    if (profile_picture) {
-        profile_picture.src = images[index];
-    }
-  }
-
   window.onload = function () {
     apply_theme_icon(get_theme());
-    load_random_image();
   };
 </script>
