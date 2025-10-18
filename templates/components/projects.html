@@ -3,7 +3,7 @@
   {% for project in data.projects %}
   <div class="publication">
     <a href="{{ project.url }}">
-      <img src="{{ project.image }}" alt="Image" />
+      <img class="lazyload" src="{{ project.image.low_res_src }}" data-src="{{ project.image.original_src }}" alt="Image" />
     </a>
     <div>
       <h3>{{ project.title }}</h3>

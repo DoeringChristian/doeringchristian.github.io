@@ -7,7 +7,9 @@
       {% endfor %}
     </div>
     <img
-      src="{{ data.picture }}"
+      class="lazyload"
+      src="{{ data.picture.low_res_src }}"
+      data-src="{{ data.picture.original_src }}"
       alt=""
       id="profile_picture"
       width="200"

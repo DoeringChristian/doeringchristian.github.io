@@ -2,7 +2,7 @@
   <h2>Publications</h2>
   {% for publication in data.publications %}
   <div class="publication">
-    <img src="{{ publication.image }}" alt="Paper Image" />
+    <img class="lazyload" src="{{ publication.image.low_res_src }}" data-src="{{ publication.image.original_src }}" alt="Paper Image" />
     <div>
       <h3>{{ publication.title }}</h3>
       <div class="publication-authors">

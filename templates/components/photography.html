@@ -2,8 +2,8 @@
   <h2>Photography</h2>
   <div class="gallery">
     {% for photo in data.photographs %}
-    <a href="{{ photo.src }}" target="_blank">
-      <img class="lazyload" src="{{ photo.low_res_src }}" data-src="{{ photo.src }}" alt="A photograph">
+    <a href="{{ photo.original_src }}" target="_blank">
+      <img class="lazyload" src="{{ photo.low_res_src }}" data-src="{{ photo.original_src }}" alt="A photograph">
     </a>
     {% endfor %}
   </div>
