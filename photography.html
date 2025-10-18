@@ -10,6 +10,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <link rel="stylesheet" type="text/css" href="styles/main.css" />
+
+    <link rel="stylesheet" type="text/css" href="styles/photography.css" />
+
     <script>
       (function () {
         const theme = localStorage.getItem("theme");
@@ -24,7 +27,9 @@
       <div class="top-bar">
         <nav>
           <a href="index.html"><i class="fas fa-home"></i></a>
-          <a href="photography.html"><i class="fas fa-camera"></i></a>
+
+          <!-- <a href="index.html"><i class="fas fa-home"></i></a> -->
+          <!-- <a href="photography.html"><i class="fas fa-camera"></i></a> -->
         </nav>
         <button class="toggle-btn" onclick="toggleDarkMode()">
           <i class="fas fa-moon"></i>
@@ -54,26 +59,19 @@
       </div>
     </header>
 
-    <div class="centered-row">
-      <div class="container">
-        <div class="content">
-          <h2>Photography</h2>
-          <div class="gallery">
-            <a href="assets/photo/Nuremberg-Table.jpg" target="_blank">
-              <img src="assets/photo/Nuremberg-Table.jpg" alt="A photograph" />
-            </a>
+    <div class="content">
+      <h2>Photography</h2>
+      <div class="gallery">
+        <a href="assets/photo/Nuremberg-Table.jpg" target="_blank">
+          <img src="assets/photo/Nuremberg-Table.jpg" alt="A photograph" />
+        </a>
 
-            <a href="assets/photo/Lausanne-Lake.jpg" target="_blank">
-              <img src="assets/photo/Lausanne-Lake.jpg" alt="A photograph" />
-            </a>
-          </div>
-        </div>
+        <a href="assets/photo/Lausanne-Lake.jpg" target="_blank">
+          <img src="assets/photo/Lausanne-Lake.jpg" alt="A photograph" />
+        </a>
       </div>
     </div>
 
-    <footer>
-      <!-- <p>&copy; 2024 Christian Döring. All rights reserved.</p> -->
-    </footer>
     <script>
       const THEME_STORAGE_KEY = "theme";
       function get_theme() {

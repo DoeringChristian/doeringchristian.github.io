@@ -1,0 +1,38 @@
+/* styles/photography.css */
+
+/* Override main.css for photography page */
+
+.content {
+    padding: 2rem;
+    margin: 2rem;
+}
+
+.photography-container {
+    width: 80%;
+    max-width: none; /* Remove max-width constraint */
+    padding: 0; /* Remove padding */
+    margin: 100px; /* Remove margin */
+}
+
+.photography-content {
+    padding: 0; /* Remove padding from content div */
+    margin: 100px; /* Remove margin from content div */
+    box-shadow: none; /* Remove box shadow */
+    border-radius: 0; /* Remove border radius */
+}
+
+.gallery {
+    gap: 0.5rem; /* Smaller gap between images for a denser look */
+    padding: 0.5rem; /* Smaller padding around the gallery */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* More columns, smaller min size */
+}
+
+.gallery img {
+    height: auto; /* Allow images to determine their own height based on aspect ratio */
+    object-fit: unset; /* Ensure full image is shown without cropping */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: none; /* No shadow */
+}
+.gallery img:hover {
+    transform: scale(1.01); /* Slightly enlarge on hover, reduced to prevent overlap */
+}

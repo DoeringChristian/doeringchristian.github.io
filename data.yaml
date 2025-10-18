@@ -1,13 +1,13 @@
 name: "Christian Döring"
 bio:
   - >
-    Hi, I''m Christian!
+    Hi, I'm Christian!
   - >
-    I''m a graduate student in Electrical and Computer Engineering at the <a
+    I'm a graduate student in Electrical and Computer Engineering at the <a
     href="https://www.tum.de/">Technical University of Munich </a>
-    (<abbr>TUM</abbr>).<br />Currently I''m writing my Masters Thesis as an
+    (<abbr>TUM</abbr>).<br />Currently I'm writing my Masters Thesis as an
     exchange student at the <i>Swiss Federal Institute of Technology
-    (<strong>EPFL</strong>)</i>. Previously I interned at both Huawei''s
+    (<strong>EPFL</strong>)</i>. Previously I interned at both Huawei's
     <nobr>Munich Research Center</nobr> and <nobr>NVIDIA Switzerland</nobr>,
     where I gained experience in Neural as well as Differentiable Rendering.
     During these internships I worked with the <nobr><strong>Mitsuba
@@ -28,6 +28,11 @@ socials:
   - url: "https://scholar.google.ch/citations?user=yJIqy00AAAAJ&hl=en"
     icon: "fa fa-graduation-cap"
 picture: assets/profile_400/2.jpg
+navbar:
+  - url: index.html
+    icon: fas fa-home
+  # - url: photography.html
+  #   icon: fas fa-camera
 
 projects:
   - title: "Dr.Jit Function Freezing"

@@ -1,8 +1,9 @@
 <header>
   <div class="top-bar">
     <nav>
-      <a href="index.html"><i class="fas fa-home"></i></a>
-      <a href="photography.html"><i class="fas fa-camera"></i></a>
+      {% for elem in data.navbar %}
+      <a href = "{{ elem.url }}"><i class = "{{ elem.icon }}"></i></a>
+      {% endfor %}
     </nav>
     <button class="toggle-btn" onclick="toggleDarkMode()">
       <i class="fas fa-moon"></i>

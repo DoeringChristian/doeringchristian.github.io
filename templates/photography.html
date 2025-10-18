@@ -3,6 +3,12 @@
 {% block title %}{{ data.name }} - Photography{% endblock %}
 {% block canonical %}https://doeringc.de/photography{% endblock %}
 
-{% block content %}
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="styles/photography.css" />
+{% endblock %}
+
+{% block footer %}{% endblock %}
+
+{% block main_content_wrapper %}
   {% include "components/photography.html" %}
 {% endblock %}

@@ -10,6 +10,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <link rel="stylesheet" type="text/css" href="styles/main.css" />
+
     <script>
       (function () {
         const theme = localStorage.getItem("theme");
@@ -24,7 +25,9 @@
       <div class="top-bar">
         <nav>
           <a href="index.html"><i class="fas fa-home"></i></a>
-          <a href="photography.html"><i class="fas fa-camera"></i></a>
+
+          <!-- <a href="index.html"><i class="fas fa-home"></i></a> -->
+          <!-- <a href="photography.html"><i class="fas fa-camera"></i></a> -->
         </nav>
         <button class="toggle-btn" onclick="toggleDarkMode()">
           <i class="fas fa-moon"></i>
@@ -61,20 +64,20 @@
             <div class="about-info">
               <h2>About Me</h2>
 
-              <p>Hi, I''m Christian!</p>
+              <p>Hi, I'm Christian!</p>
 
               <p>
-                I''m a graduate student in Electrical and Computer Engineering
-                at the
+                I'm a graduate student in Electrical and Computer Engineering at
+                the
                 <a href="https://www.tum.de/"
                   >Technical University of Munich
                 </a>
-                (<abbr>TUM</abbr>).<br />Currently I''m writing my Masters
-                Thesis as an exchange student at the
+                (<abbr>TUM</abbr>).<br />Currently I'm writing my Masters Thesis
+                as an exchange student at the
                 <i
                   >Swiss Federal Institute of Technology
                   (<strong>EPFL</strong>)</i
-                >. Previously I interned at both Huawei''s
+                >. Previously I interned at both Huawei's
                 <nobr>Munich Research Center</nobr> and
                 <nobr>NVIDIA Switzerland</nobr>, where I gained experience in
                 Neural as well as Differentiable Rendering. During these
@@ -203,6 +206,7 @@
     <footer>
       <!-- <p>&copy; 2024 Christian Döring. All rights reserved.</p> -->
     </footer>
+
     <script>
       const THEME_STORAGE_KEY = "theme";
       function get_theme() {
