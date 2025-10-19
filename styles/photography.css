@@ -8,7 +8,7 @@
 }
 
 .photography-container {
-    width: 80%;
+    width: 100%;
     max-width: none; /* Remove max-width constraint */
     padding: 0; /* Remove padding */
     margin: 20px auto; /* Center and reduce side margins */
@@ -22,39 +22,24 @@
 }
 
 .gallery {
-    column-count: 3; /* Default to 3 columns for larger screens */
-    column-gap: 0.5rem; /* Gap between columns */
     padding: 0.5rem; /* Padding around the gallery */
-    width: 100%; /* Ensure gallery takes full width */
     box-sizing: border-box; /* Include padding in width calculation */
+    position: relative;
+    margin: 0 auto;
 }
 
-.gallery a {
-    display: inline-block; /* Treat links as blocks for column layout */
-    width: 100%; /* Make links take full width of their column */
-    margin-bottom: 0.5rem; /* Vertical gap between images */
-    break-inside: avoid; /* Prevent images from breaking across columns */
-}
-
-/* Responsive adjustments for column count */
-@media (width <= 1200px) {
-    .gallery {
-        column-count: 2; /* 2 columns on tablets */
-    }
-}
-@media (width <= 800px) {
-    .gallery {
-        column-count: 1; /* 2 columns on tablets */
-    }
+.grid-item {
+    /* The position is now set via inline styles */
 }
 
 .gallery img {
-    height: auto; /* Allow images to determine their own height based on aspect ratio */
-    object-fit: unset; /* Ensure full image is shown without cropping */
+    height: 100%; /* Allow images to determine their own height based on aspect ratio */
+    object-fit: cover; /* Ensure full image is shown without cropping */
     border-radius: 8px; /* Rounded corners */
     box-shadow: none; /* No shadow */
     position: relative; /* Needed for z-index to work */
     width: 100%; /* Ensure image fills its container */
+    max-width: 100%;
 }
 .gallery img:hover {
     z-index: 1; /* Bring hovered image to the front */

@@ -134,6 +134,54 @@ if "photographs" in data:
 # Sort photographs by timestamp (newest first)
 data["photographs"].sort(key=lambda x: x["timestamp"], reverse=True)
 
+# Calculate masonry layout for photography
+if "photographs" in data:
+    # Define gallery parameters in vw units
+    num_columns = 3
+    total_width_vw = 90  # 90% of viewport width
+    gap_vw = 0.5  # 0.5vw gap
+
+    # Calculate column widths in vw
+    column_width_vw = (total_width_vw - (num_columns - 1) * gap_vw) / num_columns
+
+    # Initialize columns
+    column_heights_vw = [0] * num_columns
+
+    for photo_data in data["photographs"]:
+        try:
+            with Image.open(photo_data["original_src"]) as img:
+                width, height = img.size
+                # Find the shortest column
+                min_height_vw = min(column_heights_vw)
+                col_index = column_heights_vw.index(min_height_vw)
+
+                # Scale image to fit column width
+                scale_factor = column_width_vw / width
+                new_height_vw = height * scale_factor
+
+                # Position the image in vw units
+                x_pos_vw = col_index * (column_width_vw + gap_vw)
+                y_pos_vw = min_height_vw
+
+                photo_data[
+                    "style"
+                ] = f"position: absolute; left: {x_pos_vw}vw; top: {y_pos_vw}vw; width: {column_width_vw}vw; height: {new_height_vw}vw;"
+
+                # Update column height
+                column_heights_vw[col_index] += new_height_vw + gap_vw
+
+        except Exception as e:
+            print(f"Could not process image for masonry: {e}")
+            photo_data["style"] = ""  # Set empty style on error
+
+    # Calculate total gallery height for the container in vw
+    total_height_vw = max(column_heights_vw)
+    data[
+        "gallery_style"
+    ] = f"position: relative; height: {total_height_vw}vw; width: {total_width_vw}vw; margin: 0 auto;"
+
+
+
 # Render photography.html
 template = env.get_template("photography.html")
 output = template.render(data=data)
