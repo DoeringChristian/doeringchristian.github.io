@@ -13,8 +13,37 @@
 
 <script src="./scripts/minimasonry.js"></script>
 <script>
-var masonry = new MiniMasonry({
-  container: '.masonry',
-  baseWidth: 500,
-});
+// Initialize masonry when images are loaded
+function initMasonry() {
+  // Determine baseWidth based on viewport width
+  const isMobile = window.innerWidth < 768;
+  const baseWidth = isMobile ? 300 : 500;
+
+  var masonry = new MiniMasonry({
+    container: '.masonry',
+    baseWidth: baseWidth,
+  });
+
+  // Recalculate layout on window resize
+  let resizeTimer;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+      const newIsMobile = window.innerWidth < 768;
+      const newBaseWidth = newIsMobile ? 100 : 500;
+      if (newBaseWidth !== baseWidth) {
+        masonry.conf.baseWidth = newBaseWidth;
+        masonry.layout();
+      }
+    }, 250);
+  });
+}
+
+// Wait for content to load before initializing masonry
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initMasonry);
+} else {
+  // DOMContentLoaded already fired
+  initMasonry();
+}
 </script>
