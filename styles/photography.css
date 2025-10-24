@@ -7,6 +7,31 @@
     margin: 2rem;
 }
 
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+    .content {
+        padding: 0.5rem;
+        margin: 0.5rem;
+    }
+
+    .gallery {
+        width: 95vw !important; /* Override inline style */
+        max-width: 95vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .content {
+        padding: 0.25rem;
+        margin: 0.25rem;
+    }
+
+    .gallery {
+        width: 98vw !important; /* Override inline style */
+        max-width: 98vw;
+    }
+}
+
 .photography-container {
     width: 100%;
     max-width: none; /* Remove max-width constraint */
@@ -26,22 +51,60 @@
     box-sizing: border-box; /* Include padding in width calculation */
     position: relative;
     margin: 0 auto;
+    overflow: hidden; /* Prevent images from overflowing */
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        padding: 0.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        padding: 0.1rem;
+    }
 }
 
 .grid-item {
     /* The position is now set via inline styles */
 }
 
+.gallery a {
+    display: block;
+    overflow: hidden;
+    border-radius: 8px; /* Rounded corners on anchor */
+    transition: transform 0.2s ease; /* Smooth transition */
+}
+
+.gallery a:hover {
+    transform: scale(1.01); /* Slightly enlarge on hover */
+    z-index: 1; /* Bring hovered image to the front */
+}
+
 .gallery img {
     height: 100%; /* Allow images to determine their own height based on aspect ratio */
     object-fit: cover; /* Ensure full image is shown without cropping */
-    border-radius: 8px; /* Rounded corners */
     box-shadow: none; /* No shadow */
     position: relative; /* Needed for z-index to work */
     width: 100%; /* Ensure image fills its container */
     max-width: 100%;
+    display: block; /* Remove extra spacing */
 }
-.gallery img:hover {
-    z-index: 1; /* Bring hovered image to the front */
-    transform: scale(1.01); /* Slightly enlarge on hover */
+
+/* Ensure images don't overflow on mobile */
+@media (max-width: 768px) {
+    .gallery a {
+        border-radius: 4px; /* Smaller corners on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery a {
+        border-radius: 2px; /* Even smaller corners on mobile */
+    }
+
+    .gallery a:hover {
+        transform: none; /* Disable hover effect on mobile */
+    }
 }
