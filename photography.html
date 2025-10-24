@@ -157,7 +157,7 @@
           clearTimeout(resizeTimer);
           resizeTimer = setTimeout(function () {
             const newIsMobile = window.innerWidth < 768;
-            const newBaseWidth = newIsMobile ? 300 : 500;
+            const newBaseWidth = newIsMobile ? 100 : 500;
             if (newBaseWidth !== baseWidth) {
               masonry.conf.baseWidth = newBaseWidth;
               masonry.layout();
