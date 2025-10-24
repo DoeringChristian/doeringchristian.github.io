@@ -1,10 +1,12 @@
 <div class="content">
   <h2>Photography</h2>
-  <div class="gallery" style="{{ data.gallery_style }}">
-    {% for photo in data.photographs %}
-    <a href="{{ photo.original_src }}" target="_blank" style="{{ photo.style }}">
-      <img class="lazyload" src="{{ photo.low_res_src }}" data-src="{{ photo.original_src }}" alt="A photograph">
-    </a>
-    {% endfor %}
+  <div class="gallery-wrapper">
+    <div class="gallery" style="{{ data.gallery_style }}">
+      {% for photo in data.photographs %}
+      <a href="{{ photo.original_src }}" target="_blank" style="{{ photo.style }}">
+        <img class="lazyload" src="{{ photo.low_res_src }}" data-src="{{ photo.original_src }}" alt="A photograph">
+      </a>
+      {% endfor %}
+    </div>
   </div>
 </div>

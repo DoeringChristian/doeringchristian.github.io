@@ -134,6 +134,7 @@ if "photographs" in data:
 # Sort photographs by timestamp (newest first)
 data["photographs"].sort(key=lambda x: x["timestamp"], reverse=True)
 
+
 # Calculate masonry layout for photography with multiple column configurations
 def calculate_masonry_layout(photos, num_columns, total_width_vw, gap_vw):
     """Calculate masonry layout for given column configuration"""
@@ -157,12 +158,14 @@ def calculate_masonry_layout(photos, num_columns, total_width_vw, gap_vw):
                 x_pos_vw = col_index * (column_width_vw + gap_vw)
                 y_pos_vw = min_height_vw
 
-                layouts.append({
-                    "left": x_pos_vw,
-                    "top": y_pos_vw,
-                    "width": column_width_vw,
-                    "height": new_height_vw,
-                })
+                layouts.append(
+                    {
+                        "left": x_pos_vw,
+                        "top": y_pos_vw,
+                        "width": column_width_vw,
+                        "height": new_height_vw,
+                    }
+                )
 
                 # Update column height
                 column_heights_vw[col_index] += new_height_vw + gap_vw
@@ -177,6 +180,8 @@ def calculate_masonry_layout(photos, num_columns, total_width_vw, gap_vw):
 
 if "photographs" in data:
     # Calculate layouts for different screen sizes
+    # These are the actual content widths - padding will be handled by CSS wrapper
+
     # 3 columns for desktop (>768px)
     layouts_3col, height_3col, width_3col = calculate_masonry_layout(
         data["photographs"], num_columns=3, total_width_vw=90, gap_vw=0.5
@@ -207,13 +212,12 @@ if "photographs" in data:
             f"--width-1col: {layout_1['width']}vw; --height-1col: {layout_1['height']}vw;"
         )
 
-    # Store gallery heights for different layouts
+    # Store gallery heights and widths for different layouts
     data["gallery_style"] = (
         f"--height-3col: {height_3col}vw; --width-3col: {width_3col}vw; "
         f"--height-2col: {height_2col}vw; --width-2col: {width_2col}vw; "
         f"--height-1col: {height_1col}vw; --width-1col: {width_1col}vw;"
     )
-
 
 
 # Render photography.html
