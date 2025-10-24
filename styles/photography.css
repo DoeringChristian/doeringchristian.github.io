@@ -118,7 +118,7 @@
         top: var(--top-2col);
         width: var(--width-2col);
         height: var(--height-2col);
-        border-radius: 4px;
+        border-radius: 8px;
     }
 }
 
@@ -129,7 +129,7 @@
         top: var(--top-1col);
         width: var(--width-1col);
         height: var(--height-1col);
-        border-radius: 2px;
+        border-radius: 8px;
     }
 
     .gallery a:hover {
