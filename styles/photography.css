@@ -48,99 +48,63 @@
     border-radius: 0; /* Remove border radius */
 }
 
-.gallery-wrapper {
-    padding: 2vw;
-    margin: 0 auto;
-    width: fit-content;
-    max-width: 100vw;
-    box-sizing: border-box;
-}
-
 .gallery {
-    padding: 0;
+    column-count: 3;
+    column-gap: 20px;
+    width: 90vw;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
     box-sizing: border-box;
-    position: relative;
-    overflow: visible;
-    height: var(--height-3col);
-    width: var(--width-3col);
 }
 
-@media (max-width: 768px) {
-    .gallery-wrapper {
-        padding: 1vw;
-    }
-
-    .gallery {
-        height: var(--height-2col);
-        width: var(--width-2col);
-    }
-}
-
-@media (max-width: 480px) {
-    .gallery-wrapper {
-        padding: 1vw;
-    }
-
-    .gallery {
-        height: var(--height-1col);
-        width: var(--width-1col);
-    }
-}
-
-.grid-item {
-    /* The position is now set via inline styles */
-}
-
-.gallery a {
-    display: block;
+.gallery-item {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 20px;
+    break-inside: avoid;
     overflow: hidden;
     border-radius: 8px;
     transition: transform 0.2s ease;
-    /* Default to 3-column layout positioning */
-    position: absolute;
-    left: var(--left-3col);
-    top: var(--top-3col);
-    width: var(--width-3col);
-    height: var(--height-3col);
 }
 
-.gallery a:hover {
+.gallery-item:hover {
     transform: scale(1.01);
-    z-index: 1;
 }
 
 @media (max-width: 768px) {
-    .gallery a {
-        /* Switch to 2-column layout positioning */
-        left: var(--left-2col);
-        top: var(--top-2col);
-        width: var(--width-2col);
-        height: var(--height-2col);
-        border-radius: 8px;
+    .gallery {
+        column-count: 2;
+        column-gap: 15px;
+        width: 95vw;
+        padding: 15px;
+    }
+
+    .gallery-item {
+        margin-bottom: 15px;
     }
 }
 
 @media (max-width: 480px) {
-    .gallery a {
-        /* Switch to 1-column layout positioning */
-        left: var(--left-1col);
-        top: var(--top-1col);
-        width: var(--width-1col);
-        height: var(--height-1col);
-        border-radius: 8px;
+    .gallery {
+        column-count: 1;
+        column-gap: 0;
+        width: 98vw;
+        padding: 10px;
     }
 
-    .gallery a:hover {
+    .gallery-item {
+        margin-bottom: 10px;
+    }
+
+    .gallery-item:hover {
         transform: none;
     }
 }
 
 .gallery img {
-    height: 100%;
-    object-fit: cover;
-    box-shadow: none;
-    position: relative;
     width: 100%;
-    max-width: 100%;
+    height: auto;
     display: block;
+    border-radius: 8px;
 }

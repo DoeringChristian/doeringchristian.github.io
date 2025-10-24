@@ -143,12 +143,14 @@ if "photographs" in data:
 data["photographs"].sort(key=lambda x: x["timestamp"], reverse=True)
 
 
-# Calculate masonry layout for photography with multiple column configurations
-def calculate_masonry_layout(photos, num_columns, total_width_vw, gap_vw):
-    """Calculate masonry layout for given column configuration"""
-    column_width_vw = (total_width_vw - (num_columns - 1) * gap_vw) / num_columns
-    column_heights_vw = [0] * num_columns
-    layouts = []
+# Calculate masonry order for photography with multiple column configurations
+def calculate_masonry_order(photos, num_columns):
+    """
+    Calculate optimal order for images in masonry layout with N columns.
+    Returns list of order values (one per photo) for CSS order property.
+    """
+    column_heights = [0] * num_columns
+    order_values = []
 
     for photo_data in photos:
         try:
@@ -156,78 +158,43 @@ def calculate_masonry_layout(photos, num_columns, total_width_vw, gap_vw):
                 # Apply EXIF orientation to get correct dimensions
                 img = ImageOps.exif_transpose(img)
                 width, height = img.size
+
                 # Find the shortest column
-                min_height_vw = min(column_heights_vw)
-                col_index = column_heights_vw.index(min_height_vw)
+                min_height = min(column_heights)
+                col_index = column_heights.index(min_height)
 
-                # Scale image to fit column width
-                scale_factor = column_width_vw / width
-                new_height_vw = height * scale_factor
+                # Order value is the current position in sequence
+                order_values.append(len(order_values))
 
-                # Position the image in vw units
-                x_pos_vw = col_index * (column_width_vw + gap_vw)
-                y_pos_vw = min_height_vw
-
-                layouts.append(
-                    {
-                        "left": x_pos_vw,
-                        "top": y_pos_vw,
-                        "width": column_width_vw,
-                        "height": new_height_vw,
-                    }
-                )
-
-                # Update column height
-                column_heights_vw[col_index] += new_height_vw + gap_vw
+                # Update column height (using aspect ratio)
+                aspect_ratio = height / width
+                column_heights[col_index] += aspect_ratio
 
         except Exception as e:
-            print(f"Could not process image for masonry: {e}")
-            layouts.append({"left": 0, "top": 0, "width": 0, "height": 0})
+            print(f"Could not process image for masonry order: {e}")
+            order_values.append(len(order_values))
 
-    total_height_vw = max(column_heights_vw) if column_heights_vw else 0
-    return layouts, total_height_vw, total_width_vw
+    return order_values
 
 
 if "photographs" in data:
-    # Calculate layouts for different screen sizes
-    # These are the actual content widths - padding will be handled by CSS wrapper
+    # Calculate optimal order for different column counts
+    # Order determines which image appears where in the column flow
 
     # 3 columns for desktop (>768px)
-    layouts_3col, height_3col, width_3col = calculate_masonry_layout(
-        data["photographs"], num_columns=3, total_width_vw=90, gap_vw=0.5
-    )
+    order_3col = calculate_masonry_order(data["photographs"], num_columns=3)
 
     # 2 columns for tablet (481px-768px)
-    layouts_2col, height_2col, width_2col = calculate_masonry_layout(
-        data["photographs"], num_columns=2, total_width_vw=95, gap_vw=0.5
-    )
+    order_2col = calculate_masonry_order(data["photographs"], num_columns=2)
 
     # 1 column for mobile (≤480px)
-    layouts_1col, height_1col, width_1col = calculate_masonry_layout(
-        data["photographs"], num_columns=1, total_width_vw=98, gap_vw=0.5
-    )
+    order_1col = calculate_masonry_order(data["photographs"], num_columns=1)
 
-    # Apply layouts to each photo using CSS custom properties
+    # Apply order values to each photo using CSS custom properties
     for i, photo_data in enumerate(data["photographs"]):
-        layout_3 = layouts_3col[i]
-        layout_2 = layouts_2col[i]
-        layout_1 = layouts_1col[i]
-
-        photo_data["style"] = (
-            f"--left-3col: {layout_3['left']}vw; --top-3col: {layout_3['top']}vw; "
-            f"--width-3col: {layout_3['width']}vw; --height-3col: {layout_3['height']}vw; "
-            f"--left-2col: {layout_2['left']}vw; --top-2col: {layout_2['top']}vw; "
-            f"--width-2col: {layout_2['width']}vw; --height-2col: {layout_2['height']}vw; "
-            f"--left-1col: {layout_1['left']}vw; --top-1col: {layout_1['top']}vw; "
-            f"--width-1col: {layout_1['width']}vw; --height-1col: {layout_1['height']}vw;"
-        )
-
-    # Store gallery heights and widths for different layouts
-    data["gallery_style"] = (
-        f"--height-3col: {height_3col}vw; --width-3col: {width_3col}vw; "
-        f"--height-2col: {height_2col}vw; --width-2col: {width_2col}vw; "
-        f"--height-1col: {height_1col}vw; --width-1col: {width_1col}vw;"
-    )
+        photo_data["order_3col"] = order_3col[i]
+        photo_data["order_2col"] = order_2col[i]
+        photo_data["order_1col"] = order_1col[i]
 
 
 # Render photography.html
