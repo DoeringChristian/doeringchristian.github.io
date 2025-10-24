@@ -110,28 +110,33 @@ if "photographs" in data:
         timestamp = None
         try:
             with Image.open(original_path) as img:
-                exif_data = img._getexif()
+                # Apply EXIF orientation first
+                img = ImageOps.exif_transpose(img)
+
+                # Use modern getexif() API
+                exif_data = img.getexif()
                 if exif_data:
-                    # 0x9003 is DateTimeOriginal, 0x9004 is DateTimeDigitized
-                    if 0x9003 in exif_data:
-                        timestamp_str = exif_data[0x9003]
-                    elif 0x9004 in exif_data:
-                        timestamp_str = exif_data[0x9004]
-                    else:
-                        timestamp_str = None
+                    # Check main EXIF tags first
+                    timestamp_str = exif_data.get(36867) or exif_data.get(36868)
+
+                    # If not found, check EXIF IFD (tag 34665)
+                    if not timestamp_str and 34665 in exif_data:
+                        ifd = exif_data.get_ifd(34665)
+                        timestamp_str = ifd.get(36867) or ifd.get(36868)
 
                     if timestamp_str:
                         # EXIF date format: YYYY:MM:DD HH:MM:SS
                         timestamp = datetime.strptime(
                             timestamp_str, "%Y:%m:%d %H:%M:%S"
                         )
+                        print(f"Read EXIF timestamp for {original_path}: {timestamp}")
         except Exception as e:
-            # print(f"Could not read EXIF for {original_path}: {e}") # Uncomment for debugging
-            pass
+            print(f"Could not read EXIF for {original_path}: {e}")
 
         if not timestamp:
             # Fallback to file modification time if EXIF not found or error
             timestamp = datetime.fromtimestamp(os.path.getmtime(original_path))
+            print(f"Using file mtime for {original_path}: {timestamp}")
         photo_data["timestamp"] = timestamp
 
 # Sort photographs by timestamp (newest first)
