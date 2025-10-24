@@ -3,7 +3,7 @@ from jinja2 import Environment, FileSystemLoader
 from omegaconf import OmegaConf
 import subprocess
 import os
-from PIL import Image
+from PIL import Image, ImageOps
 import glob
 from datetime import datetime
 
@@ -26,6 +26,9 @@ def process_image_for_low_res(original_path):
     if not os.path.exists(low_res_path):
         try:
             with Image.open(original_path) as img:
+                # Apply EXIF orientation first to fix rotated/flipped images
+                img = ImageOps.exif_transpose(img)
+
                 # Resize to 400px width, maintaining aspect ratio
                 width, height = img.size
                 new_width = 400
@@ -145,6 +148,8 @@ def calculate_masonry_layout(photos, num_columns, total_width_vw, gap_vw):
     for photo_data in photos:
         try:
             with Image.open(photo_data["original_src"]) as img:
+                # Apply EXIF orientation to get correct dimensions
+                img = ImageOps.exif_transpose(img)
                 width, height = img.size
                 # Find the shortest column
                 min_height_vw = min(column_heights_vw)
