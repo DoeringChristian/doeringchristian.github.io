@@ -134,20 +134,14 @@ if "photographs" in data:
 # Sort photographs by timestamp (newest first)
 data["photographs"].sort(key=lambda x: x["timestamp"], reverse=True)
 
-# Calculate masonry layout for photography
-if "photographs" in data:
-    # Define gallery parameters in vw units
-    num_columns = 3
-    total_width_vw = 90  # 90% of viewport width
-    gap_vw = 0.5  # 0.5vw gap
-
-    # Calculate column widths in vw
+# Calculate masonry layout for photography with multiple column configurations
+def calculate_masonry_layout(photos, num_columns, total_width_vw, gap_vw):
+    """Calculate masonry layout for given column configuration"""
     column_width_vw = (total_width_vw - (num_columns - 1) * gap_vw) / num_columns
-
-    # Initialize columns
     column_heights_vw = [0] * num_columns
+    layouts = []
 
-    for photo_data in data["photographs"]:
+    for photo_data in photos:
         try:
             with Image.open(photo_data["original_src"]) as img:
                 width, height = img.size
@@ -163,22 +157,62 @@ if "photographs" in data:
                 x_pos_vw = col_index * (column_width_vw + gap_vw)
                 y_pos_vw = min_height_vw
 
-                photo_data[
-                    "style"
-                ] = f"position: absolute; left: {x_pos_vw}vw; top: {y_pos_vw}vw; width: {column_width_vw}vw; height: {new_height_vw}vw;"
+                layouts.append({
+                    "left": x_pos_vw,
+                    "top": y_pos_vw,
+                    "width": column_width_vw,
+                    "height": new_height_vw,
+                })
 
                 # Update column height
                 column_heights_vw[col_index] += new_height_vw + gap_vw
 
         except Exception as e:
             print(f"Could not process image for masonry: {e}")
-            photo_data["style"] = ""  # Set empty style on error
+            layouts.append({"left": 0, "top": 0, "width": 0, "height": 0})
 
-    # Calculate total gallery height for the container in vw
-    total_height_vw = max(column_heights_vw)
-    data[
-        "gallery_style"
-    ] = f"position: relative; height: {total_height_vw}vw; width: {total_width_vw}vw; margin: 0 auto;"
+    total_height_vw = max(column_heights_vw) if column_heights_vw else 0
+    return layouts, total_height_vw, total_width_vw
+
+
+if "photographs" in data:
+    # Calculate layouts for different screen sizes
+    # 3 columns for desktop (>768px)
+    layouts_3col, height_3col, width_3col = calculate_masonry_layout(
+        data["photographs"], num_columns=3, total_width_vw=90, gap_vw=0.5
+    )
+
+    # 2 columns for tablet (481px-768px)
+    layouts_2col, height_2col, width_2col = calculate_masonry_layout(
+        data["photographs"], num_columns=2, total_width_vw=95, gap_vw=0.5
+    )
+
+    # 1 column for mobile (≤480px)
+    layouts_1col, height_1col, width_1col = calculate_masonry_layout(
+        data["photographs"], num_columns=1, total_width_vw=98, gap_vw=0.5
+    )
+
+    # Apply layouts to each photo using CSS custom properties
+    for i, photo_data in enumerate(data["photographs"]):
+        layout_3 = layouts_3col[i]
+        layout_2 = layouts_2col[i]
+        layout_1 = layouts_1col[i]
+
+        photo_data["style"] = (
+            f"--left-3col: {layout_3['left']}vw; --top-3col: {layout_3['top']}vw; "
+            f"--width-3col: {layout_3['width']}vw; --height-3col: {layout_3['height']}vw; "
+            f"--left-2col: {layout_2['left']}vw; --top-2col: {layout_2['top']}vw; "
+            f"--width-2col: {layout_2['width']}vw; --height-2col: {layout_2['height']}vw; "
+            f"--left-1col: {layout_1['left']}vw; --top-1col: {layout_1['top']}vw; "
+            f"--width-1col: {layout_1['width']}vw; --height-1col: {layout_1['height']}vw;"
+        )
+
+    # Store gallery heights for different layouts
+    data["gallery_style"] = (
+        f"--height-3col: {height_3col}vw; --width-3col: {width_3col}vw; "
+        f"--height-2col: {height_2col}vw; --width-2col: {width_2col}vw; "
+        f"--height-1col: {height_1col}vw; --width-1col: {width_1col}vw;"
+    )
 
 
 

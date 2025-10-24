@@ -13,22 +13,12 @@
         padding: 0.5rem;
         margin: 0.5rem;
     }
-
-    .gallery {
-        width: 95vw !important; /* Override inline style */
-        max-width: 95vw;
-    }
 }
 
 @media (max-width: 480px) {
     .content {
         padding: 0.25rem;
         margin: 0.25rem;
-    }
-
-    .gallery {
-        width: 98vw !important; /* Override inline style */
-        max-width: 98vw;
     }
 }
 
@@ -47,22 +37,31 @@
 }
 
 .gallery {
-    padding: 0.5rem; /* Padding around the gallery */
-    box-sizing: border-box; /* Include padding in width calculation */
+    padding: 0.5rem;
+    box-sizing: border-box;
     position: relative;
     margin: 0 auto;
-    overflow: hidden; /* Prevent images from overflowing */
+    overflow: visible; /* Allow hover effect to show */
+    /* Default to 3-column layout */
+    height: var(--height-3col);
+    width: var(--width-3col);
 }
 
 @media (max-width: 768px) {
     .gallery {
         padding: 0.25rem;
+        /* Switch to 2-column layout */
+        height: var(--height-2col);
+        width: var(--width-2col);
     }
 }
 
 @media (max-width: 480px) {
     .gallery {
         padding: 0.1rem;
+        /* Switch to 1-column layout */
+        height: var(--height-1col);
+        width: var(--width-1col);
     }
 }
 
@@ -73,38 +72,53 @@
 .gallery a {
     display: block;
     overflow: hidden;
-    border-radius: 8px; /* Rounded corners on anchor */
-    transition: transform 0.2s ease; /* Smooth transition */
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+    /* Default to 3-column layout positioning */
+    position: absolute;
+    left: var(--left-3col);
+    top: var(--top-3col);
+    width: var(--width-3col);
+    height: var(--height-3col);
 }
 
 .gallery a:hover {
-    transform: scale(1.01); /* Slightly enlarge on hover */
-    z-index: 1; /* Bring hovered image to the front */
+    transform: scale(1.01);
+    z-index: 1;
 }
 
-.gallery img {
-    height: 100%; /* Allow images to determine their own height based on aspect ratio */
-    object-fit: cover; /* Ensure full image is shown without cropping */
-    box-shadow: none; /* No shadow */
-    position: relative; /* Needed for z-index to work */
-    width: 100%; /* Ensure image fills its container */
-    max-width: 100%;
-    display: block; /* Remove extra spacing */
-}
-
-/* Ensure images don't overflow on mobile */
 @media (max-width: 768px) {
     .gallery a {
-        border-radius: 4px; /* Smaller corners on mobile */
+        /* Switch to 2-column layout positioning */
+        left: var(--left-2col);
+        top: var(--top-2col);
+        width: var(--width-2col);
+        height: var(--height-2col);
+        border-radius: 4px;
     }
 }
 
 @media (max-width: 480px) {
     .gallery a {
-        border-radius: 2px; /* Even smaller corners on mobile */
+        /* Switch to 1-column layout positioning */
+        left: var(--left-1col);
+        top: var(--top-1col);
+        width: var(--width-1col);
+        height: var(--height-1col);
+        border-radius: 2px;
     }
 
     .gallery a:hover {
-        transform: none; /* Disable hover effect on mobile */
+        transform: none;
     }
+}
+
+.gallery img {
+    height: 100%;
+    object-fit: cover;
+    box-shadow: none;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    display: block;
 }
