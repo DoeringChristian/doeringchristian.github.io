@@ -3,9 +3,8 @@
 /* Override main.css for photography page */
 
 .content {
-    padding: 2rem 0; /* Vertical padding only */
-    margin: 0 auto; /* Center horizontally */
-    max-width: 100vw; /* Don't exceed viewport */
+    padding: 2rem 2rem; /* Vertical padding only */
+    margin: 2rem;
 }
 
 .content h2 {
@@ -13,98 +12,27 @@
     margin-bottom: 2rem;
 }
 
-/* Responsive adjustments for mobile */
-@media (max-width: 768px) {
-    .content {
-        padding: 1rem 0;
-    }
 
-    .content h2 {
-        margin-bottom: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .content {
-        padding: 0.5rem 0;
-    }
-
-    .content h2 {
-        margin-bottom: 0.5rem;
-    }
-}
-
-.photography-container {
-    width: 100%;
-    max-width: none; /* Remove max-width constraint */
-    padding: 0; /* Remove padding */
-    margin: 20px auto; /* Center and reduce side margins */
-}
-
-.photography-content {
-    padding: 0; /* Remove padding from content div */
-    margin: 100px; /* Remove margin from content div */
-    box-shadow: none; /* Remove box shadow */
-    border-radius: 0; /* Remove border radius */
-}
 
 .gallery {
-    column-count: 3;
-    column-gap: 20px;
-    width: 90vw;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 20px;
-    box-sizing: border-box;
+    position: relative;
 }
 
 .gallery-item {
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 20px;
-    break-inside: avoid;
-    overflow: hidden;
-    border-radius: 8px;
-    transition: transform 0.2s ease;
+    position: absolute;
 }
 
 .gallery-item:hover {
     transform: scale(1.01);
 }
 
-@media (max-width: 768px) {
-    .gallery {
-        column-count: 2;
-        column-gap: 15px;
-        width: 95vw;
-        padding: 15px;
-    }
-
-    .gallery-item {
-        margin-bottom: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .gallery {
-        column-count: 1;
-        column-gap: 0;
-        width: 98vw;
-        padding: 10px;
-    }
-
-    .gallery-item {
-        margin-bottom: 10px;
-    }
-
-    .gallery-item:hover {
-        transform: none;
-    }
-}
-
-.gallery img {
+.gallery-item img {
     width: 100%;
     height: auto;
     display: block;
     border-radius: 8px;
+}
+.gallery-item img:hover{
+    transform: scale(1.01);
+    transition: transform 0.2s ease;
 }

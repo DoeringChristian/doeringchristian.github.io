@@ -58,106 +58,93 @@
 
     <div class="content">
       <h2>Photography</h2>
-      <div class="gallery">
-        <a
-          href="assets/photo/Bern-River.jpg"
-          target="_blank"
-          class="gallery-item"
-          style="--order-3col: 0; --order-2col: 0; --order-1col: 0"
-        >
-          <img
-            class="lazyload"
-            src="assets/low_res/photo/Bern-River.jpg"
-            data-src="assets/photo/Bern-River.jpg"
-            alt="A photograph"
-          />
-        </a>
+      <div class="masonry gallery">
+        <div class="gallery-item">
+          <a href="assets/photo/Bern-River.jpg" target="_blank">
+            <img
+              class="lazyload"
+              src="assets/low_res/photo/Bern-River.jpg"
+              data-src="assets/photo/Bern-River.jpg"
+              alt="A photograph"
+            />
+          </a>
+        </div>
 
-        <a
-          href="assets/photo/Bern-Mirror.jpg"
-          target="_blank"
-          class="gallery-item"
-          style="--order-3col: 1; --order-2col: 1; --order-1col: 1"
-        >
-          <img
-            class="lazyload"
-            src="assets/low_res/photo/Bern-Mirror.jpg"
-            data-src="assets/photo/Bern-Mirror.jpg"
-            alt="A photograph"
-          />
-        </a>
+        <div class="gallery-item">
+          <a href="assets/photo/Bern-Mirror.jpg" target="_blank">
+            <img
+              class="lazyload"
+              src="assets/low_res/photo/Bern-Mirror.jpg"
+              data-src="assets/photo/Bern-Mirror.jpg"
+              alt="A photograph"
+            />
+          </a>
+        </div>
 
-        <a
-          href="assets/photo/Nuremberg-Table.jpg"
-          target="_blank"
-          class="gallery-item"
-          style="--order-3col: 2; --order-2col: 2; --order-1col: 2"
-        >
-          <img
-            class="lazyload"
-            src="assets/low_res/photo/Nuremberg-Table.jpg"
-            data-src="assets/photo/Nuremberg-Table.jpg"
-            alt="A photograph"
-          />
-        </a>
+        <div class="gallery-item">
+          <a href="assets/photo/Nuremberg-Table.jpg" target="_blank">
+            <img
+              class="lazyload"
+              src="assets/low_res/photo/Nuremberg-Table.jpg"
+              data-src="assets/photo/Nuremberg-Table.jpg"
+              alt="A photograph"
+            />
+          </a>
+        </div>
 
-        <a
-          href="assets/photo/Lausanne-Lake02.jpg"
-          target="_blank"
-          class="gallery-item"
-          style="--order-3col: 3; --order-2col: 3; --order-1col: 3"
-        >
-          <img
-            class="lazyload"
-            src="assets/low_res/photo/Lausanne-Lake02.jpg"
-            data-src="assets/photo/Lausanne-Lake02.jpg"
-            alt="A photograph"
-          />
-        </a>
+        <div class="gallery-item">
+          <a href="assets/photo/Lausanne-Lake02.jpg" target="_blank">
+            <img
+              class="lazyload"
+              src="assets/low_res/photo/Lausanne-Lake02.jpg"
+              data-src="assets/photo/Lausanne-Lake02.jpg"
+              alt="A photograph"
+            />
+          </a>
+        </div>
 
-        <a
-          href="assets/photo/Lausanne-Lake.jpg"
-          target="_blank"
-          class="gallery-item"
-          style="--order-3col: 4; --order-2col: 4; --order-1col: 4"
-        >
-          <img
-            class="lazyload"
-            src="assets/low_res/photo/Lausanne-Lake.jpg"
-            data-src="assets/photo/Lausanne-Lake.jpg"
-            alt="A photograph"
-          />
-        </a>
+        <div class="gallery-item">
+          <a href="assets/photo/Lausanne-Lake.jpg" target="_blank">
+            <img
+              class="lazyload"
+              src="assets/low_res/photo/Lausanne-Lake.jpg"
+              data-src="assets/photo/Lausanne-Lake.jpg"
+              alt="A photograph"
+            />
+          </a>
+        </div>
 
-        <a
-          href="assets/photo/Geneve-Tuk.jpg"
-          target="_blank"
-          class="gallery-item"
-          style="--order-3col: 5; --order-2col: 5; --order-1col: 5"
-        >
-          <img
-            class="lazyload"
-            src="assets/low_res/photo/Geneve-Tuk.jpg"
-            data-src="assets/photo/Geneve-Tuk.jpg"
-            alt="A photograph"
-          />
-        </a>
+        <div class="gallery-item">
+          <a href="assets/photo/Geneve-Tuk.jpg" target="_blank">
+            <img
+              class="lazyload"
+              src="assets/low_res/photo/Geneve-Tuk.jpg"
+              data-src="assets/photo/Geneve-Tuk.jpg"
+              alt="A photograph"
+            />
+          </a>
+        </div>
 
-        <a
-          href="assets/photo/Geneve-Glass.jpg"
-          target="_blank"
-          class="gallery-item"
-          style="--order-3col: 6; --order-2col: 6; --order-1col: 6"
-        >
-          <img
-            class="lazyload"
-            src="assets/low_res/photo/Geneve-Glass.jpg"
-            data-src="assets/photo/Geneve-Glass.jpg"
-            alt="A photograph"
-          />
-        </a>
+        <div class="gallery-item">
+          <a href="assets/photo/Geneve-Glass.jpg" target="_blank">
+            <img
+              class="lazyload"
+              src="assets/low_res/photo/Geneve-Glass.jpg"
+              data-src="assets/photo/Geneve-Glass.jpg"
+              alt="A photograph"
+            />
+          </a>
+        </div>
       </div>
     </div>
+
+    <script src="./scripts/minimasonry.js"></script>
+    <script>
+      var masonry = new MiniMasonry({
+        container: ".masonry",
+        baseWidth: 500,
+      });
+    </script>
 
     <script>
       const THEME_STORAGE_KEY = "theme";

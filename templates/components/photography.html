@@ -1,10 +1,20 @@
 <div class="content">
   <h2>Photography</h2>
-  <div class="gallery">
+  <div class="masonry gallery">
     {% for photo in data.photographs %}
-    <a href="{{ photo.original_src }}" target="_blank" class="gallery-item" style="--order-3col: {{ photo.order_3col }}; --order-2col: {{ photo.order_2col }}; --order-1col: {{ photo.order_1col }};">
-      <img class="lazyload" src="{{ photo.low_res_src }}" data-src="{{ photo.original_src }}" alt="A photograph">
-    </a>
+    <div class="gallery-item">
+      <a href="{{ photo.original_src }}" target="_blank" >
+        <img class="lazyload" src="{{ photo.low_res_src }}" data-src="{{ photo.original_src }}" alt="A photograph">
+      </a>
+    </div>
     {% endfor %}
   </div>
 </div>
+
+<script src="./scripts/minimasonry.js"></script>
+<script>
+var masonry = new MiniMasonry({
+    container: '.masonry',
+    baseWidth: 500,
+});
+</script>

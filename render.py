@@ -143,58 +143,7 @@ if "photographs" in data:
 data["photographs"].sort(key=lambda x: x["timestamp"], reverse=True)
 
 
-# Calculate masonry order for photography with multiple column configurations
-def calculate_masonry_order(photos, num_columns):
-    """
-    Calculate optimal order for images in masonry layout with N columns.
-    Returns list of order values (one per photo) for CSS order property.
-    """
-    column_heights = [0] * num_columns
-    order_values = []
-
-    for photo_data in photos:
-        try:
-            with Image.open(photo_data["original_src"]) as img:
-                # Apply EXIF orientation to get correct dimensions
-                img = ImageOps.exif_transpose(img)
-                width, height = img.size
-
-                # Find the shortest column
-                min_height = min(column_heights)
-                col_index = column_heights.index(min_height)
-
-                # Order value is the current position in sequence
-                order_values.append(len(order_values))
-
-                # Update column height (using aspect ratio)
-                aspect_ratio = height / width
-                column_heights[col_index] += aspect_ratio
-
-        except Exception as e:
-            print(f"Could not process image for masonry order: {e}")
-            order_values.append(len(order_values))
-
-    return order_values
-
-
-if "photographs" in data:
-    # Calculate optimal order for different column counts
-    # Order determines which image appears where in the column flow
-
-    # 3 columns for desktop (>768px)
-    order_3col = calculate_masonry_order(data["photographs"], num_columns=3)
-
-    # 2 columns for tablet (481px-768px)
-    order_2col = calculate_masonry_order(data["photographs"], num_columns=2)
-
-    # 1 column for mobile (≤480px)
-    order_1col = calculate_masonry_order(data["photographs"], num_columns=1)
-
-    # Apply order values to each photo using CSS custom properties
-    for i, photo_data in enumerate(data["photographs"]):
-        photo_data["order_3col"] = order_3col[i]
-        photo_data["order_2col"] = order_2col[i]
-        photo_data["order_1col"] = order_1col[i]
+# Masonry.js will handle layout - no reordering needed in Python
 
 
 # Render photography.html
