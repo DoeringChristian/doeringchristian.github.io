@@ -39,14 +39,17 @@ projects:
       function with a decorator, we record and replay kernels, skipping tracing
       and compilation of kernels."
     image: "assets/drfreeze.png"
-    url: "https://drjit.readthedocs.io/en/stable/freeze.html"
-    link_text: "Docs"
+    buttons:
+      - name: Docs
+        url: "https://drjit.readthedocs.io/en/stable/freeze.html"
   - title: "Vulkan Path-tracer"
     description:
       "A vulkan path-tracer, written in Rust. It implements the Disney BSDF and
       Next Event Estimation."
     image: "assets/vulkan-rt.jpg"
-    url: "https://github.com/DoeringChristian/vulkan-rt/"
+    buttons:
+      - name: Source
+        url: "https://github.com/DoeringChristian/vulkan-rt/"
   - title: "Mitsuba3 Implementation of ReSTIR GI"
     description:
       'Implementation of the <a
@@ -54,23 +57,29 @@ projects:
       GI</a> algorithm in the <a
       href="https://www.mitsuba-renderer.org/">Mitsuba3</a> rendering framework.'
     image: "assets/restirgi-staircase.jpg"
-    url: "https://github.com/DoeringChristian/restirgi/"
+    buttons:
+      - name: Source
+        url: "https://github.com/DoeringChristian/restirgi/"
 publications:
   - title: "Real-time Rendering with a Neural Irradiance Volume"
     authors:
       'Arno Coomans , Giacomo Nazzaro, Edoardo A. Dominici, <div
-      class="publication-authors-me">Christian Döring,</div> Floor Verhoeven,
+      class="publication-authors-me">Christian Döring</div>, Floor Verhoeven,
       Konstantinos Vardis, Markus Steinberger'
     venue: Accepted at Eurographics 2026
-    url: https://arxiv.org/abs/2602.12949
     image: assets/teaser_niv.jpg
+    buttons:
+      - name: Paper
+        url: https://arxiv.org/abs/2602.12949
   - title: "Real-time Neural Rendering of Dynamic Light Fields"
     authors:
       'Arno Coomans, Edoardo A. Dominici, <div
-      class="publication-authors-me">Christian Döring,</div> Joerg H. Mueller,
+      class="publication-authors-me">Christian Döring</div>, Joerg H. Mueller,
       Jozef Hladky, Markus Steinberger'
     venue: "Computer Graphics Forum (EG), 2024"
     image: "assets/dynamic.png"
-    url: "https://doi.org/10.1111/cgf.15014"
-    project: "https://arnocoomans.be/eg2024"
-    pdf: "https://doi.org/10.1111/cgf.15014"
+    buttons:
+      - name: Paper
+        url: "https://doi.org/10.1111/cgf.15014"
+      - name: Project
+        url: "https://arnocoomans.be/eg2024"

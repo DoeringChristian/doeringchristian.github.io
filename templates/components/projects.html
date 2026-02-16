@@ -11,7 +11,9 @@
         {{ project.description }}
       </p>
       <div class="publication-links">
-        <a href="{{ project.url }}">{{ project.link_text | default('Source') }}</a>
+        {% for button in project.buttons %}
+        <a href="{{ button.url }}">{{ button.name }}</a>
+        {% endfor %}
       </div>
     </div>
   </div>

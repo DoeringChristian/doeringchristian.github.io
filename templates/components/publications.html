@@ -12,8 +12,9 @@
         {{ publication.venue }}
       </div>
       <div class="publication-links">
-        <a href="{{ publication.url }}" target="_blank">Paper</a>
-        <a href="{{ publication.project }}" target="_blank">Project</a>
+        {% for button in publication.buttons %}
+        <a href="{{ button.url }}" target="_blank">{{ button.name }}</a>
+        {% endfor %}
       </div>
     </div>
   </div>
