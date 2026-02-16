@@ -63,8 +63,8 @@ projects:
 publications:
   - title: "Real-time Rendering with a Neural Irradiance Volume"
     authors:
-      'Arno Coomans , Giacomo Nazzaro, Edoardo A. Dominici, <div
-      class="publication-authors-me">Christian Döring</div>, Floor Verhoeven,
+      'Arno Coomans, Giacomo Nazzaro, Edoardo A. Dominici, <span
+      class="publication-authors-me">Christian Döring</span>, Floor Verhoeven,
       Konstantinos Vardis, Markus Steinberger'
     venue: Accepted at Eurographics 2026
     image: assets/teaser_niv.jpg
@@ -73,8 +73,8 @@ publications:
         url: https://arxiv.org/abs/2602.12949
   - title: "Real-time Neural Rendering of Dynamic Light Fields"
     authors:
-      'Arno Coomans, Edoardo A. Dominici, <div
-      class="publication-authors-me">Christian Döring</div>, Joerg H. Mueller,
+      'Arno Coomans, Edoardo A. Dominici, <span
+      class="publication-authors-me">Christian Döring</span>, Joerg H. Mueller,
       Jozef Hladky, Markus Steinberger'
     venue: "Computer Graphics Forum (EG), 2024"
     image: "assets/dynamic.png"
