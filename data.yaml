@@ -31,8 +31,6 @@ picture: assets/profile_400/2.jpg
 navbar:
   - url: index.html
     icon: fas fa-home
-  # - url: photography.html
-  #   icon: fas fa-camera
 
 projects:
   - title: "Dr.Jit Function Freezing"
@@ -58,6 +56,14 @@ projects:
     image: "assets/restirgi-staircase.jpg"
     url: "https://github.com/DoeringChristian/restirgi/"
 publications:
+  - title: "Real-time Rendering with a Neural Irradiance Volume"
+    authors:
+      'Arno Coomans , Giacomo Nazzaro, Edoardo A. Dominici, <div
+      class="publication-authors-me">Christian Döring,</div> Floor Verhoeven,
+      Konstantinos Vardis, Markus Steinberger'
+    venue: Accepted at Eurographics 2026
+    url: https://arxiv.org/abs/2602.12949
+    image: assets/teaser_niv.jpg
   - title: "Real-time Neural Rendering of Dynamic Light Fields"
     authors:
       'Arno Coomans, Edoardo A. Dominici, <div

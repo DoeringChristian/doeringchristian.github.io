@@ -6,7 +6,7 @@ platforms = ["linux-64"]
 version = "0.1.0"
 
 [tasks]
-format = "npm install prettier && npx prettier --write index.html photography.html styles/main.css"
+format = "npm install prettier && npx prettier --write index.html styles/main.css"
 
 [dependencies]
 python = ">=3.9"
