@@ -27,7 +27,7 @@ socials:
     icon: "fa fa-envelope fa-lg"
   - url: "https://scholar.google.ch/citations?user=yJIqy00AAAAJ&hl=en"
     icon: "fa fa-graduation-cap"
-picture: assets/profile_400/2.jpg
+picture: assets/profile/0.jpg
 navbar:
   - url: index.html
     icon: fas fa-home
@@ -60,6 +60,14 @@ projects:
     buttons:
       - name: Source
         url: "https://github.com/DoeringChristian/restirgi/"
+  - title: "Slides"
+    description: "Object centric presentation engine written in react."
+    image: "assets/slides.jpg"
+    buttons:
+      - name: Source
+        url: "https://github.com/DoeringChristian/slides/"
+      - name: Project
+        url: "slides/"
 publications:
   - title: "Real-time Rendering with a Neural Irradiance Volume"
     authors:
