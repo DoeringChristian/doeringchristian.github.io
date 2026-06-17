@@ -6,6 +6,7 @@ platforms = ["linux-64", "osx-arm64"]
 version = "0.1.0"
 
 [tasks]
+build = "python render.py"
 format = "npm install prettier && npx prettier --write index.html styles/main.css"
 
 [dependencies]

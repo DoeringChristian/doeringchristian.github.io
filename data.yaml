@@ -38,6 +38,7 @@ projects:
       "A function level caching feature for the Dr.Jit compiler. By annotating a
       function with a decorator, we record and replay kernels, skipping tracing
       and compilation of kernels."
+    url: "https://drjit.readthedocs.io/en/stable/freeze.html"
     image: "assets/drfreeze.png"
     buttons:
       - name: Docs
@@ -46,6 +47,7 @@ projects:
     description:
       "A vulkan path-tracer, written in Rust. It implements the Disney BSDF and
       Next Event Estimation."
+    url: "https://github.com/DoeringChristian/vulkan-rt/"
     image: "assets/vulkan-rt.jpg"
     buttons:
       - name: Source
@@ -56,18 +58,20 @@ projects:
       href="https://research.nvidia.com/publication/2021-06_restir-gi-path-resampling-real-time-path-tracing">ReSTIR
       GI</a> algorithm in the <a
       href="https://www.mitsuba-renderer.org/">Mitsuba3</a> rendering framework.'
+    url: "https://github.com/DoeringChristian/restirgi/"
     image: "assets/restirgi-staircase.jpg"
     buttons:
       - name: Source
         url: "https://github.com/DoeringChristian/restirgi/"
   - title: "Slides"
     description: "Object centric presentation engine written in react."
+    url: "slides/"
     image: "assets/slides.jpg"
     buttons:
       - name: Source
         url: "https://github.com/DoeringChristian/slides/"
       - name: Project
-        url: "slides/"
+        url: "https://doeringc.de/slides"
 publications:
   - title: "Real-time Rendering with a Neural Irradiance Volume"
     authors:
