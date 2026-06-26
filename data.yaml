@@ -81,6 +81,8 @@ publications:
     venue: Accepted at Eurographics 2026
     image: assets/teaser_niv.jpg
     buttons:
+      - name: Paper
+        url: https://doi.org/10.1111/cgf.70400
       - name: arXiv
         url: https://arxiv.org/abs/2602.12949
   - title: "Real-time Neural Rendering of Dynamic Light Fields"
